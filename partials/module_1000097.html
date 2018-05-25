@@ -1,0 +1,544 @@
+<div class="content-header">
+
+    <div class="con-head-left">
+        <span  placeholder="Soraqça" class="hed-title">Tədris planları</span>
+    </div>
+    <div class="con-head-right">
+        <div class="prepend-icon">
+            <input  data-i18n="placeholder.search"  type="search" class="name-filter" placeholder="search">
+
+        </div>
+        <div id="buttons_div" class="dropdown-func">
+            <div class="btn btn-default reg dropdown-toggle cog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                Ümumi əməliyyatlar
+            </div>
+            <ul id="module_operations" class="dropdown-menu calibrated first-calibrated">
+
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="filters-block module_1000092 tesk-filter-none">
+    <div class="form-group tesk-filter-none-filter">
+        <div class="btn-group">
+            <div class="tree-modal-container">
+                <button  id="org-list" type="button" class="btn btn-default group-tree-modal  btn-block"><span data-i18n="structure">Structure</span></button>
+
+            </div>
+        </div>
+        <div class="btn-group">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                <i class="fa fa-ellipsis-horizontal"></i><span><span>Təhsil səviyyəsi</span></span><i class="fa fa-angle-down"></i>
+            </button>
+            <ul id="edu-level-filter" class="dropdown-menu eduFilter">
+
+            </ul>
+        </div>
+        <div class="btn-group">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                <i class="fa fa-ellipsis-horizontal"></i><span><span>Təhsil forması</span></span><i class="fa fa-angle-down"></i>
+            </button>
+            <ul id="edu-type-filter" class="dropdown-menu eduFilterType">
+
+            </ul>
+        </div>
+        <div class="btn-group">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                <i class="fa fa-ellipsis-horizontal"></i><span><span>Status</span></span><i class="fa fa-angle-down"></i>
+            </button>
+            <ul id="status-filter" class="dropdown-menu statusFilter">
+
+            </ul>
+        </div>
+    </div>
+</div>
+<form class="eduplan-search-form">
+        <input type="hidden" name="orgId" />
+        <input type="hidden" name="eduLevelId" />
+        <input type="hidden" name="eduTypeId" />
+        <input type="hidden" name="name" />
+        <input type="hidden" name="status" />
+</form>
+
+ <!--<div class="col-sm-12 content-filters">-->
+
+<!--<div class="">-->
+    <!--<div class="col-sm-9 select-bar">-->
+
+        <!--</div>-->
+
+    <!--</div>-->
+    <!--<div class="col-sm-2 search-bar">-->
+        <!--<div class="prepend-icon">-->
+            <!--<input data-i18n="placeholder.search"  type="search" class="form-control input-sm m-l-10 name-filter" placeholder="search">-->
+            <!--<i class="fa fa-search m-l-10"></i>-->
+        <!--</div>-->
+
+    <!--</div>-->
+    <!--<div class="col-sm-1 button-bar">-->
+        <!--<div id="buttons_div" class="btn-group dropdown-func">-->
+            <!--<div class="btn btn-default reg dropdown-toggle cog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+            <!--</div>-->
+            <!--<ul id="module_operations" class="dropdown-menu plus special">-->
+
+            <!--</ul>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+
+
+
+</div>
+
+<div class="row ">
+    <div class="col-md-12">
+        <div class="panel panel-white table-scroll threeDot">
+            <div class="table-responsive " style="overflow: hidden;">
+                <table id="edu-plan-table" class="table table-celled table-hover long-last-td">
+                    <thead>
+                        <tr>
+                            <th>№</th>
+                            <th>Adı</th>
+                            <th>İxtisas</th>
+                            <th>Təhsil forması</th>
+                            <th>Təhsil səviyyəsi</th>
+                            <th>Status</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        
+                    </tbody>
+                </table>
+                <div class="space-for-footer">
+                    <div id="load_more_div" class=" flex-input">
+                        <button data-i18n="load.more" data-table="eduplan_module" class="btn loading-margins btn-load-more">Daha çox yüklə</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div id="academicGroupTree" class="modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header header-primary">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 data-i18n="university" class="modal-title">Ali təhsil müəssisəsi</h4>
+            </div>
+            <div class="modal-body scrollable">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="search-bar">
+                            <div class="prepend-icon">
+                                <input data-i18n="placeholder.search" class="form-control input-sm tree-search" type="search" placeholder="Search">
+                                <i class="fa fa-search"></i>
+                            </div>
+                        </div>
+                        <div id="org-list-tree" style="overflow: auto;">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer flex-img">
+                <button data-i18n="buttons.ok" type="button" class="btn btn-primary orgStructureFilter">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="new-upd ems">
+    <div class="search-scroll">
+        <div class="edu-plan-form-top">
+            <div class="search-butons">
+                <a data-i18n="buttons.ok"  class="btn-eduplan-submit">OK</a>
+                <a href="" data-i18n="close" class="close-student-search" placeholder="Bağla">Bağla</a>
+            </div>
+            <form class="edu-plan-form">
+                <div class="m">
+                    <h3  class="panel-title">Yeni tədris planı</h3>
+                </div>
+                <div class="m">
+                    <input add-eduplan-required class="structure-id hidden" name = "orgId"/>
+                    <input class="structure-type-id hidden"/>
+                    <div class="form-group">
+                        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="headingUniversity">
+                                    <h4 class="panel-title">
+                                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseUniversity" aria-expanded="false" aria-controls="collapseUniversity">
+                                            İxtisas
+                                        </a>
+                                        <h6 id="university-list-h6"></h6>
+                                    </h4>
+                                </div>
+                                <div id="collapseUniversity" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingUniversity">
+                                    <div class="panel-body scrollable tree-max-height org-list-accordion" id="org-list-accordion">
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="form-group no-37">
+                        <label for="add-number">Adı</label>
+                        <div class="prepend-icon">
+                            <input add-eduplan-required class="form-control eduplan-name no-padding" name = "name"/>
+                            
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-serial">Təhsil forması</label>
+                        <div class="prepend-icon">
+                            <select add-eduplan-required class="form-control eduplan-edu-type no-padding" name = "eduTypeId">
+                                
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-serial">Təhsil səviyyəsi</label>
+                        <div class="prepend-icon">
+                            <select add-eduplan-required class="form-control eduplan-edu-level no-padding" name = "eduLevelId">
+                                
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group no-37">
+                        <label for="start-date">Qeyd</label>
+                        <div class="prepend-icon">
+                            <textarea class="form-control eduplan-note no-padding" name = "note"/>
+                            
+                        </div>
+                    </div>
+                </div>
+<!--                 <div class="modal-footer flex-img">
+                    <button data-i18n="buttons.ok" doc-confirm type="button" class="btn btn-primary btn-eduplan-submit">OK</button>
+                    <button data-i18n="cancel" type="button" class="btn btn-danger" data-dismiss="modal" aria-label="Close">Cancel</button>
+                </div> -->
+            </form>
+  
+
+        </div>
+    </div>
+</div>
+
+
+<div class="tedris-area">
+    <div class="search-scroll"></div>
+</div>
+
+<div class="tedris-edit">
+    <div class="search-scroll">
+
+        <form class="edu-plan-form">
+            <div class="search-butons" style="margin-top: -25px">
+                    <a data-i18n="buttons.ok" doc-confirm type="button" class="btn btn-primary btn-eduplan-submit">Təsdiq et</a>
+                    <a data-i18n="cancel" type="button" class="close-edit" data-dismiss="modal" aria-label="Close" href="">Bağla</a>
+                </div>
+            <div class="">
+   
+                <h3  class="panel-title">Yeni tədris planı</h3>
+            </div>
+            <div class="">
+                <input eduplan-required class="structure-id hidden" name = "orgId"/>
+                <input class="structure-type-id hidden"/>
+                <div class="form-group">
+                    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingUniversity">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseUniversity" aria-expanded="false" aria-controls="collapseUniversity">
+                                        İxtisas
+                                    </a>
+                                    <h6 id="university-list-h6"></h6>
+                                </h4>
+                            </div>
+                            <div id="collapseUniversity" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingUniversity">
+                                <div class="panel-body scrollable tree-max-height org-list-accordion" id="org-list-accordion">
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="form-group no-37">
+                    <label for="add-number">Adı</label>
+                    <div class="">
+                        <input eduplan-required class="form-control eduplan-name " name = "name"/>
+                        
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="add-serial">Təhsil forması</label>
+                    <div class="">
+                        <select eduplan-required class="form-control eduplan-edu-type no-padding" name = "eduTypeId">
+                            
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="add-serial">Təhsil səviyyəsi</label>
+                    <div class="">
+                        <select eduplan-required class="form-control eduplan-edu-level no-padding" name = "eduLevelId">
+                            
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group no-37">
+                    <label for="start-date">Qeyd</label>
+                    <div class="">
+                        <textarea class="form-control eduplan-note no-padding" name = "note"/>
+                        
+                    </div>
+                </div>
+            </div>
+<!--             <div class="modal-footer flex-img">
+                <button data-i18n="buttons.ok" doc-confirm type="button" class="btn btn-primary btn-eduplan-submit">OK</button>
+                <button data-i18n="cancel" type="button" class="btn btn-danger" data-dismiss="modal" aria-label="Close">Cancel</button>
+            </div> -->
+        </form>
+
+
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    $(function (e) {
+
+        $('body').find('.table-scroll').slimScroll();
+        $('.search-scroll').slimScroll();
+        $('body').on('click', '.close-student-search', function () {
+            $('body').find('.new-upd').css('right', '-100%');
+            return false
+        });
+
+        try {
+        Ems.i18n(Ems.lang);
+        $('#main-div .sub_modules_div').remove();
+        Ems.Proxy.loadOperations(Ems.currModule, function (operations) {
+            $('#buttons_div').find('ul').html(Ems.Service.parseOperations(operations, 1));
+            Ems.Proxy.getEducationPlanList();
+        });
+
+        $('body').on('click', '.close-edit', function(){
+            $('.tedris-edit').css('right', '-100%');
+            return false
+        });
+        
+        Ems.Proxy.loadOrgTreeByType(1000700, function (tree) {
+                    Ems.Service.commonParseTree(tree, 'org-list-accordion');
+        }, $('#org-list-accordion'));
+        
+        Ems.Proxy.loadDictionariesByTypeId(1000017, 0, function (eduType) {
+            var html = "<li data-id = '0'><a href='#'>" + Ems.dictionary[Ems.lang]['all'] + "</a></li>";
+            $.each(eduType, function (i, v) {
+                html += '<li data-id = "' + v.id + '"><a href="#">' + v.value[Ems.lang] + '</a></li>'
+            });
+            $('#edu-type-filter').html(html);
+            $('.eduplan-edu-type').html(Ems.Service.parseDictionaryForSelect(eduType));
+        });
+        
+        Ems.Proxy.loadDictionariesByTypeId(1000044, 0, function (status) {
+            var html = "<li data-id = '0'><a href='#'>" + Ems.dictionary[Ems.lang]['all'] + "</a></li>";
+            $.each(status, function (i, v) {
+                html += '<li data-id = "' + v.id + '"><a href="#">' + v.value[Ems.lang] + '</a></li>'
+            });
+            $('#status-filter').html(html);
+        });
+        
+        Ems.Proxy.loadDictionariesByTypeId(1000016, 0, function (eduLevel) {
+            var html = "<li data-id = '0'><a href='#'>" + Ems.dictionary[Ems.lang]['all'] + "</a></li>";
+            $.each(eduLevel, function (i, v) {
+                html += '<li data-id = "' + v.id + '"><a href="#">' + v.value[Ems.lang] + '</a></li>'
+            });
+            $('#main-div #edu-level-filter').html(html);
+            console.log($('#main-div #edu-level-filter').html());
+            $('.eduplan-edu-level').html(Ems.Service.parseDictionaryForSelect(eduLevel));
+        });
+        
+        $('#main-div').on('click', '#org-list', function (event) {
+            try {
+                $('#academicGroupTree').modal({
+                    backdrop: false
+                });
+
+                var treeObj = $(':jstree').length;
+               // if (treeObj == 0) {
+                    if ($('#org-list-tree').attr('check') !== '1') {
+                        Ems.Proxy.loadOrgTreeByType(1000700, function (tree) {
+                            Ems.Service.commonParseTree(tree, 'org-list-tree');
+                            $('.tree-preloader').remove();
+                        }, $('#org-list-tree'));
+                        var searchString = $('#main-div .tree-search').val();
+                        $('#org-list-tree').jstree('search', searchString);
+                    }
+//                }
+                ;
+
+            }
+            catch (err) {
+                console.error(err);
+            }
+        });
+        
+        $(".tree-search").keyup(function () {
+            var searchString = $(this).val();
+            $('#org-list-tree').jstree('search', searchString);
+        });
+        
+        $('.orgStructureFilter').on('click', function (e) {
+            try {
+                var id = $('#org-list-tree li[aria-selected="true"]').attr('id');
+                var text = $('#org-list-tree li[aria-selected="true"]').find('a:first').text();
+                if (text.length > 0) {
+                    $('.btn.group-tree-modal').text(text);
+                    $('.btn.group-tree-modal').attr('data-id', id);
+                    $('#academicGroupTree').modal('hide');
+
+                    if (id !== 0) {
+                        $('body .eduplan-search-form input[name="orgId"]').val(id);
+                    }
+                    else {
+                        $('body .eduplan-search-form input[name="orgId"]').val('');
+                    }
+                    var params = $('body .eduplan-search-form').serialize();
+                    Ems.Proxy.getEducationPlanList('',params);
+                    $('.btn-load-more').removeAttr('data-page');
+                }
+                else {
+                    $.notify(Ems.dictionary[Ems.lang]['select_information'], {
+                        type: 'warning'
+                    })
+                }
+            }
+            catch (err) {
+
+            }
+        });
+        
+        
+        
+        $("#main-div #org-list-accordion").on("select_node.jstree", function (evt, data) {
+            try {
+                var path = data.instance.get_path(data.node, ',');
+                $('#headingOne').attr('data-node-id', data.node.id);
+                $('#headingOne').attr('data-node-text', path);
+                $('#university-list-h6').text(path);
+                $('#main-div .structure-id').val(data.node.id);
+                $('#main-div .structure-type-id').val(data.node.original.typeId);
+            }
+            catch (err) {
+                console.error(err);
+            }
+        });
+        
+        $('#main-div').on('click', '#edu-type-filter li', function (e) {
+            try {
+                var eduType = $(this).attr('data-id');
+                if (eduType !== 0) {
+                    $('body .eduplan-search-form input[name="eduTypeId"]').val(eduType);
+                }
+                else {
+                    $('body .eduplan-search-form input[name="eduTypeId"]').val('');
+                }
+
+                $('.btn-load-more').removeAttr('data-page');
+                var params = $('body .eduplan-search-form').serialize()
+                Ems.Proxy.getEducationPlanList('', params);
+                $('.btn-load-more').removeAttr('data-page');
+
+            }
+            catch (err) {
+                console.error(err);
+            }
+
+        });
+
+        
+        $('#main-div').on('click', '#status-filter li', function (e) {
+            try {
+                var status = $(this).attr('data-id');
+                if (status !== 0) {
+                    $('body .eduplan-search-form input[name="status"]').val(status);
+                }
+                else {
+                    $('body .eduplan-search-form input[name="status"]').val('');
+                }
+                
+                $('.btn-load-more').removeAttr('data-page');
+                var params = $('body .eduplan-search-form').serialize()
+                Ems.Proxy.getEducationPlanList('', params);
+                $('.btn-load-more').removeAttr('data-page');
+
+            }
+            catch (err) {
+                console.error(err);
+            }
+
+        });
+        
+        $('#main-div').on('click', '#edu-level-filter li', function (e) {
+            try {
+                var eduLevel = $(this).attr('data-id');
+                if (eduLevel !== 0) {
+                    $('body .eduplan-search-form input[name="eduLevelId"]').val(eduLevel);
+                }
+                else {
+                    $('body .eduplan-search-form input[name="eduLevelId"]').val('');
+                }
+
+                $('.btn-load-more').removeAttr('data-page');
+                var params = $('body .eduplan-search-form').serialize()
+                Ems.Proxy.getEducationPlanList('', params);
+                $('.btn-load-more').removeAttr('data-page');
+
+            }
+            catch (err) {
+                console.error(err);
+            }
+
+        });
+        
+        $('body').on('click', '#edu-level-filter a, #status-filter a, #edu-type-filter a', function (e) {
+            var text = $(this).text();
+            $(this).parents('.btn-group').find('button span').text(text);
+        });
+    
+        $('#main-div').on('change', '.name-filter', function() {
+            $('body .eduplan-search-form input[name="name"]').val($(this).val());
+            
+            $('.btn-load-more').removeAttr('data-page');
+            var params = $('body .eduplan-search-form').serialize()
+            Ems.Proxy.getEducationPlanList('', params);
+            $('.btn-load-more').removeAttr('data-page');
+        })
+
+        }
+        catch (err) {
+            console.error(err);
+        }
+    });
+
+
+
+</script>
+
+

@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<div class="row view-mode" style="background: #fff">
+    <div class="col-md-12 scroll-table-top   p-0">
+        <div class="scroll-table">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Fənn qrupu</h3>
+                    <div class="search-butons" style="margin-top: -25px;">
+                        <a data-i18n="buttons.ok"  class="btn-course-submit ">OK</a>
+                        <a href="" data-i18n="close" class="close-add-course" placeholder="Bağla">Bağla</a>
+                    </div>
+                </div>
+                <div class="panel-body ">
+                    <div class="row">
+                        <ul class="three-tabs col-md-12 nav panel-title" style="margin-bottom: 20px;">
+                            <li  class="col-sm-3 active">
+                                <a data-toggle="tab" href="#tab1"  class="first-tab">
+                                    <span class=" ">Ümumi məlumatlar</span>
+                                </a>
+                            </li>
+                            <li class="col-sm-3">
+                                <a data-toggle="tab" href="#tab2" class="second-tab">
+                                    <span class=" ">Müəllimlər</span>
+                                </a>
+                            </li>
+                            <li class="col-sm-3">
+                                <a data-toggle="tab" href="#tab3" class="three-tab">
+                                    <span class=" ">İştirakçılar</span>
+                                </a>
+                            </li>
+                            <li class="col-sm-3">
+                                <a data-toggle="tab" href="#tab4" class="four-tab">
+                                    <span class=" ">Yarım qruplar</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div id="tab1" class="tab-pane fade in active">
+                                <div class = "col-md-12">
+                                    <a href="#" class="save-button btn-course-submit" style="top: -13px !important; z-index: 10000">
+                                        <img src="assets/img/save-icon.png" alt="Save" width="20" height="20" />
+                                    </a>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="add-serial">Təhsil səviyyəsi</label>
+                                        <div class=" ">
+                                            <select course-required class="form-control course-edu-level no-padding" >
+
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="add-serial">Təhsil forması</label>
+                                        <div class=" ">
+                                            <select course-required class="form-control course-edu-type no-padding" name = "eduTypeId">
+
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="add-serial">İxtisas</label>
+                                        <div class=" ">
+                                            <select course-required class="form-control course-speciality no-padding">
+
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6"></div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="add-serial">Tədris planı</label>
+                                        <div class=" ">
+                                            <select course-required class="form-control course-edu-plan no-padding">
+
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="add-serial">Fənnin tədris planındakı semestri</label>
+                                        <div class=" ">
+                                            <select class="form-control course-semestr no-padding" >
+
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="add-serial">Fənnin adı</label>
+                                        <div class=" ">
+                                            <select course-required class="form-control course-subject no-padding" name = "subjectId">
+
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="add-serial">Fənnin ili</label>
+                                        <div class=" ">
+                                            <select course-required class="form-control course-edu-year no-padding" name = "eduYearId">
+
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group no-37">
+                                        <label for="add-serial">Fənn üzrə qrupun kodu</label>
+                                        <div class=" ">
+                                            <input course-required class="form-control course-code no-padding" name = "code" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="add-serial">Semestr</label>
+                                        <div class=" ">
+                                            <select course-required class="form-control course-semestr-id no-padding" name = "semestrId">
+
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="add-serial">Tədris dili</label>
+                                        <div class=" ">
+                                            <select course-required class="form-control course-edu-lang no-padding" name = "eduLangId">
+
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="add-serial">Qeyd</label>
+                                        <div class=" ">
+                                            <textarea class="form-control course-note" name = "note">
+
+                                            </textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="add-serial" style="text-align: center;">Təkliflər</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="add-serial">Mühazirə</label>
+                                        <div class=" ">
+                                            <input disabled class="form-control course-fake-mhours no-padding" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="add-serial">Seminar</label>
+                                        <div class=" ">
+                                            <input disabled class="form-control course-fake-shours no-padding" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="add-serial">Laboratoriya</label>
+                                        <div class=" ">
+                                            <input disabled class="form-control course-fake-lhours no-padding" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="add-serial">Qiymətləndirmə tipi</label>
+                                        <div class=" ">
+                                            <select course-required class="form-control course-evaluation-type no-padding" name = "evaluationTypeId" disabled="disabled">
+
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="add-serial">Ətraflı</label>
+                                        <div class=" ">
+                                            <table id="evaluation-type-table" class="table table-celled table-hover long-last-td" style="white-space: pre-line">
+                                                <thead>
+                                                <tr>
+                                                    <th>Adı</th>
+                                                    <th>Bal</th>
+                                                    <th>Ballıq sistem</th>
+                                                    <th>Keçid faizi</th>
+                                                    <th>Avtomatik</th>
+
+                                                </tr>
+                                                </thead>
+
+                                                <tbody>
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="form-group no-37">
+                                        <label for="">Düstur</label>
+                                        <input type="text" class="form-control">
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="tab2" class="tab-pane fade">
+
+                                <div class="col-md-12">
+                                    <div class="form-group">
+
+                                        <div class=" ">
+
+                                            <table id="course-teacher-table" class="table table-celled table-hover long-last-td" style="white-space: pre-line">
+                                                <thead>
+                                                <tr>
+                                                    <th>No</th>
+                                                    <th>S.A.A</th>
+                                                    <th>Dərs tipi</th>
+                                                    <th><div class="add-new add-teacher course-student-table-add"><img src="assets/img/AddNew.png" alt="" width="20" height="20"></div></th>
+
+                                                </tr>
+                                                </thead>
+
+                                                <tbody>
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="tab3" class="tab-pane fade">
+
+                                <div class="col-md-12">
+                                    <div class="form-group">
+
+                                        <div class=" ">
+
+                                            <table id="course-student-table" class="table table-celled table-hover long-last-td" style="white-space: pre-line">
+                                                <thead>
+                                                <tr>
+                                                    <th>No</th>
+                                                    <th>S.A.A</th>
+                                                    <th>Qrup nömrəsi</th>
+                                                    <!--<th>Tədris alma statusu</th>-->
+                                                    <th><div class="add-new add-student course-student-table-add"><img src="assets/img/AddNew.png" alt="" width="20" height="20"></div></th>
+
+                                                </tr>
+                                                </thead>
+
+                                                <tbody>
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div id="tab4" class="tab-pane fade">
+
+                                <div class="col-md-12">
+                                    <div class="form-group">
+
+                                        <div class=" ">
+
+                                            <table id="course-student-group-table" class="table table-celled table-hover long-last-td" style="white-space: pre-line">
+                                                <thead>
+                                                <tr>
+                                                    <th>No</th>
+                                                    <th>Qrupun adı</th>
+                                                    <th>Dərs tipi</th>
+                                                    <th><div class="add-new add-student-group course-student-table-add"><img src="assets/img/AddNew.png" alt="" width="20" height="20"></div></th>
+
+                                                </tr>
+                                                </thead>
+
+                                                <tbody>
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+    </div>
+</div>
+<div class="modal student-modal">
+    <div class="modal-dialog document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4  class="modal-title">İştirakçılar</h4>
+            </div>
+            <div class="modal-body">
+                    <div class="form-group">
+                        <label for="add-serial" class="addSerial">Tədris planı</label>
+                        <div class="participants">
+                            <label for="">Saatları nəzərə al
+                                <input type="radio" name="hourType" class="hour_type" value="1" checked="checked">
+                            </label>
+                            <label for="">
+                                Saatları nəzərə alma
+                                <input type="radio" name="hourType" class="hour_type" value="0">
+                            </label>
+                            <label for="">
+                                Hamısı
+                                <input type="radio" name="hourType" class="hour_type" value="2">
+                            </label>
+                        </div>
+                        <div class=" ">
+                            <select class="form-control edu-plan-filter no-padding" >
+
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-serial">Qrupun adı</label>
+                        <div class=" ">
+                            <select class="form-control course-group-name-filter no-padding" >
+
+                            </select>
+                        </div>
+                    </div>
+                <div class="form-group">
+
+                    <div class="form-group-wrapper">
+
+                        <div class="table-responsive static-student-table">
+                            <table id="course-static-student-table" class="table table-celled table-hover long-last-td" style="white-space: pre-line">
+                                <thead>
+                                    <tr>
+                                        <th>No</th>
+                                        <th>S.A.A</th>
+                                        <th><input type='checkbox' class="all-student-check" style="opacity: 1; position: sticky;"/></th>
+                                        <!--<th>Tədris alma statusu<input type='checkbox' class="all-student-buy-edu-check" style="opacity: 1; position: sticky;"/></th>-->
+
+
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer flex-img">
+                <button data-i18n="buttons.ok" doc-confirm type="button" class="btn btn-primary btn-static-course-student-add">OK</button>
+                <button data-i18n="buttons.back" type="button" class="btn btn-danger" data-dismiss="modal" aria-label="Close">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal course-group-student-modal">
+    <div class="modal-dialog document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4  class="modal-title">İştirakçılar</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <div class=" ">
+                        <div class="table-responsive">
+                            <form class="course-group-student-form">
+                                <table id="course-group-student-table" class="table table-celled table-hover long-last-td" style="white-space: pre-line">
+                                <thead>
+                                    <tr>
+                                        <th>No</th>
+                                        <th>S.A.A</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+
+                                </tbody>
+                            </table>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer flex-img">
+                <button data-i18n="buttons.ok" doc-confirm type="button" class="btn btn-primary btn-course-group-student-add">OK</button>
+                <button data-i18n="buttons.back" type="button" class="btn btn-danger" data-dismiss="modal" aria-label="Close">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal teacher-modal">
+    <div class="modal-dialog document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4  class="modal-title">Müəllimlər</h4>
+            </div>
+            <div class="modal-body">
+
+                <div class="form-group">
+                    <label for="add-serial">Müəllim</label>
+                    <div class=" ">
+                        <select course-teacher-required class="form-control course-teacher no-padding" >
+
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="add-serial">Dərs tipi</label>
+                    <div class=" ">
+                        <select course-teacher-required class="form-control course-lesson-type no-padding" >
+
+                        </select>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer flex-img">
+                <button data-i18n="buttons.ok" doc-confirm type="button" class="btn btn-primary btn-static-course-teacher-add">OK</button>
+                <button data-i18n="buttons.backs" type="button" class="btn btn-danger" data-dismiss="modal" aria-label="Close">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal student-group-modal">
+    <div class="modal-dialog document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4  class="modal-title">Yarım qruplar</h4>
+            </div>
+            <div class="modal-body">
+
+
+                <div class="form-group">
+                    <label for="add-serial">Yarım qrup</label>
+                    <div class=" ">
+                        <select course-group-required class="form-control course-group no-padding" >
+
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="add-serial">Dərs tipi</label>
+                    <div class=" ">
+                        <select course-group-required class="form-control course-group-lesson-type no-padding" >
+
+                        </select>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer flex-img">
+                <button data-i18n="buttons.ok" doc-confirm type="button" class="btn btn-primary btn-course-group-add">OK</button>
+                <button data-i18n="buttons.backs" type="button" class="btn btn-danger" data-dismiss="modal" aria-label="Close">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(function () {
+        Ems.i18n(Ems.lang);
+
+        $('body').on('click', '.close-add-course', function(){
+            $('.qrup-area').css('right', '-100%');
+            $('body').find('div.left-fixed-menu + div.content-part').css('width','calc(100% - 280px');
+            return false
+        });
+
+        $('body').find('.static-student-table').slimScroll();
+
+        $('body').on('click', '.view-mode .close-add-course', function(){
+            $('.module-block[data-id="' + Ems.currModule + '"]').click();
+                setTimeout(function(){
+                    $('.sdie-c').fadeIn(1);
+                    $('.col-sm-3 + .slimScrollDiv').css('width', '85%');
+                    $('.content-part').css('padding-left', '0');
+                }, 100);
+            $('body').find('div.left-fixed-menu + div.content-part').css('width','calc(100% - 280px');
+            return false
+        });
+        $('body').find('.scroll-table').slimScroll();
+        $('#main-div .combo').select2();
+
+//        $('body').find('.view-mode').slimScroll();
+//         $('body').find('.search-scroll').slimScroll();
+
+        $('#main-div').on('change', '.course-edu-level', function () {
+            try {
+                var eduLevel = $(this).val();
+                if (eduLevel > 0) {
+
+                    Ems.Proxy.getFilteredStructureList(Ems.structureId, eduLevel, 0, function (specialities) {
+                        if (specialities) {
+                            var html = '<option value="0">' + Ems.dictionary[Ems.lang]['select'] + '</option>';
+                            $.each(specialities, function (i, v) {
+                                html += '<option value="' + v.id + '">' + v.name[Ems.lang] + '</option>'
+                            })
+                        }
+                        $('.course-speciality').html(html);
+                    });
+                } else if (eduLevel == 0) {
+                    $('.course-speciality').html('');
+                }
+            }
+            catch (err) {
+                console.error(err);
+            }
+        });
+
+        Ems.Proxy.loadOrgTreeByType(1000700, function (tree) {
+            Ems.Service.commonParseTree(tree, 'org-list-accordion');
+        }, $('#org-list-accordion'));
+
+
+        $('#main-div').on('change', '.course-edu-type, .course-speciality', function () {
+            var eduLevel = $('.course-edu-level').val();
+            var eduType = $('.course-edu-type').val();
+            var spec = $('.course-speciality').val();
+
+            if (eduLevel > 0 && eduType > 0 && spec > 0) {
+                var form = {
+                    orgId: spec,
+                    eduTypeId: eduType,
+                    page: 1,
+                    pageSize: 1000000
+                }
+                Ems.Proxy.getEducationPlanListBySpecId(form, function (data) {
+                    if (data && data.data) {
+                        var html = '<option value="0">' + Ems.dictionary[Ems.lang]["select"] + '</option>';
+
+                        $.each(data.data, function (i, v) {
+                            html += '<option value="' + v.id + '">' + v.name + '</option>';
+                        });
+                        $('.course-edu-plan').html(html);
+
+                    }
+                });
+            }
+        });
+
+        $('#main-div').on('change', '.course-semestr, .course-edu-plan', function () {
+            var eduPlanId = $('.course-edu-plan').val();
+            var semestrId = $('.course-semestr').val();
+            if (eduPlanId > 0) {
+                Ems.Proxy.getEducationPlanSubjectsByEduPlanAndSemestrId(eduPlanId, semestrId, function (data) {
+                    if (data && data.data) {
+                        var html = '<option value="0">' + Ems.dictionary[Ems.lang]["select"] + '</option>';
+
+                        $.each(data.data, function (i, v) {
+                            html += '<option value="' + v.id + '" data-m="' + v.mhours + '" data-s="' + v.shours + '" data-l="' + v.lhours + '">' + v.dicName.value[Ems.lang] + '(' + v.credit + ' kr.) - ' + v.code + '---' + (v.chosenStatus == 1 ? 'Seçmə fənn' : '') + '</option>';
+                        });
+                        $('.course-subject').html(html);
+
+                    }
+                }); 
+               
+            }
+        });
+        
+        $('.hour_type').on('click', function() {
+            if($(this).attr('data-type') === 'new') return false;
+            
+            $('.hour_type').removeAttr('data-type');
+            $(this).attr('data-type', 'new');
+            var hourType = $(this).val();
+            
+            
+            var id = $('.course-subject').val();
+            Ems.Proxy.getEduplanListBySubjectId(id, hourType, function(data) {
+                if(data && data.data) {
+                    var html = '';
+                    
+                    $.each(data.data, function(i, v) {
+                       html += '<option value = "'+v.id+'">'+v.value[Ems.lang]+'</option>' 
+                    });
+                }
+                $('body .edu-plan-filter').html(html);
+                
+                var eduPlanId = $('.course-edu-plan').val();
+                $('body .edu-plan-filter').val(eduPlanId);
+                Ems.Proxy.getEduplanStudentGroup(eduPlanId, function(data) {
+                    if(data && data.data) {
+                        var html = '';            
+                        $.each(data.data, function(i, v) {
+                            html +='<option value="'+v.id+'">'+v.name+'</option>';
+                        })
+                        $('.course-group-name-filter').html(html);
+                        var groupId = $('.course-group-name-filter').val();
+                        Ems.Proxy.getEduplanStudentByGroupId(eduPlanId, groupId, function(data) {
+                            if(data && data.data) {
+                                var html = '';
+                                $.each(data.data, function(i, v) {
+                                    html += '<tr>'+
+                                            '<td>'+(++i)+'</td>'+
+                                            '<td>'+v.fullname+'</td>'+
+                                            '<td><input value = "'+v.id+'"type="checkbox" class="student-check" style="opacity: 1; position: sticky;"/></td>'+
+//                                            '<td><input type="checkbox" class="student-edu-check" style="opacity: 1; position: sticky;"/></td>'+
+                                            '</tr>'
+                                    
+                                })
+                                $('#course-static-student-table tbody').html(html);
+                            }
+                        })
+                    }
+                });
+                
+                Ems.Proxy.getEducationPlanEvaluationType(id, function(data) {
+                    if(data && data.data) {
+                        $('#main-div .course-evaluation-type').val(data.data.evaId);
+                        var htmlEva = '';
+                        $.each(data.data.details, function(i, v){
+                            
+                            htmlEva +=  '<tr>'+
+                                        '<td>'+v.evaluationType.pointType.value[Ems.lang]+'</td>'+
+                                        '<td>'+v.evaluationType.point+'</td>'+
+                                        '<td>10</td>'+
+                                        '<td>25</td>'+
+                                        '<td>'+(v.pointDetail == 1 ? '<i class="fa fa-check"></i>' : '')+'</td>'+
+                                        
+                                        '</tr>'
+                        })
+                        
+                        $('#main-div #evaluation-type-table tbody').html(htmlEva);
+                    }
+                })
+                
+            });
+            
+        })
+
+        $('#main-div').on('change', '.course-subject', function () {
+            
+            var id = $(this).val();
+            var mhours = $(this).find('option:selected').attr('data-m');
+            var shours = $(this).find('option:selected').attr('data-s');
+            var lhours = $(this).find('option:selected').attr('data-l');
+            var hourType = $('input[name=hourType]:checked').val()
+            $('.course-fake-mhours').val(mhours);
+            $('.course-fake-shours').val(shours);
+            $('.course-fake-lhours').val(lhours);
+            
+            
+            Ems.Proxy.getEduplanListBySubjectId(id, hourType, function(data) {
+                if(data && data.data) {
+                    var html = '';
+                    
+                    $.each(data.data, function(i, v) {
+                       html += '<option value = "'+v.id+'">'+v.value[Ems.lang]+'</option>' 
+                    });
+                }
+                $('body .edu-plan-filter').html(html);
+                
+                var eduPlanId = $('.course-edu-plan').val();
+                $('body .edu-plan-filter').val(eduPlanId);
+                Ems.Proxy.getEduplanStudentGroup(eduPlanId, function(data) {
+                    if(data && data.data) {
+                        var html = '';            
+                        $.each(data.data, function(i, v) {
+                            html +='<option value="'+v.id+'">'+v.name+'</option>';
+                        })
+                        $('.course-group-name-filter').html(html);
+                        var groupId = $('.course-group-name-filter').val();
+                        Ems.Proxy.getEduplanStudentByGroupId(eduPlanId, groupId, function(data) {
+                            if(data && data.data) {
+                                var html = '';
+                                $.each(data.data, function(i, v) {
+                                    html += '<tr>'+
+                                            '<td>'+(++i)+'</td>'+
+                                            '<td>'+v.fullname+'</td>'+
+                                            '<td><input value = "'+v.id+'"type="checkbox" class="student-check" style="opacity: 1; position: sticky;"/></td>'+
+//                                            '<td><input type="checkbox" class="student-edu-check" style="opacity: 1; position: sticky;"/></td>'+
+                                            '</tr>'
+                                    
+                                })
+                                $('#course-static-student-table tbody').html(html);
+                            }
+                        })
+                    }
+                });
+                
+                Ems.Proxy.getEducationPlanEvaluationType(id, function(data) {
+                    if(data && data.data) {
+                        $('#main-div .course-evaluation-type').val(data.data.evaId);
+                        var htmlEva = '';
+                        $.each(data.data.details, function(i, v){
+                            
+                            htmlEva +=  '<tr>'+
+                                        '<td>'+v.evaluationType.pointType.value[Ems.lang]+'</td>'+
+                                        '<td>'+v.evaluationType.point+'</td>'+
+                                        '<td>10</td>'+
+                                        '<td>25</td>'+
+                                        '<td>'+(v.pointDetail == 1 ? '<i class="fa fa-check"></i>' : '')+'</td>'+
+                                        
+                                        '</tr>'
+                        })
+                        
+                        $('#main-div #evaluation-type-table tbody').html(htmlEva);
+                    }
+                })
+                
+            });
+        
+            
+        })
+
+        Ems.Proxy.loadDictionariesByTypeId('1000064', 0, function (eduLang) {
+            var html = Ems.Service.parseDictionaryForSelect(eduLang);
+            $('#main-div .course-lesson-type').html(html);
+            $('#main-div .course-group-lesson-type').html(html);
+        });
+
+        Ems.Proxy.loadDictionariesByTypeId('1000098', 0, function (eduLang) {
+            var html = Ems.Service.parseDictionaryForSelect(eduLang);
+            $('#main-div .course-group').html(html);
+        });
+
+        $('.course-evaluation-type').on('change', function () {
+            var id = $(this).val();
+            Ems.Proxy.getEvaluationTypeDetails(id, function (data) {
+                if (data && data.data) {
+                    $('#main-div #evaluation-type-table tbody').html(Ems.Service.parseEvaluationTypes(data.data));
+                }
+            })
+        })
+        $('.course-subject').on('change', function () {
+            var id = $(this).val();
+            Ems.Proxy.getTeacherListBySubjectId(id, function (data) {
+                if (data && data.data) {
+                    var html = '<option value="0">' + Ems.dictionary[Ems.lang]["select"] + '</option>';
+                    $.each(data.data, function (i, v) {
+                        html += '<option value="' + v.id + '">' + v.fullname + '</option>';
+                    });
+                    $('.course-teacher').html(html);
+                }
+            })
+        })
+
+        $('#main-div').on('click', '.add-teacher', function () {
+            $('.teacher-modal').modal('show');
+        })
+
+        $('.btn-static-course-teacher-add').on('click', function () {
+            var id = $(this).attr('data-id');
+            var teacherId = $('.course-teacher').val();
+            var lessonType = $('.course-lesson-type').val();
+            if(id > 0) {
+                var form = {
+                    teacherId: teacherId,
+                    lessonTypeId:lessonType
+                }
+                if(Ems.Validation.validateRequiredFields('course-teacher-required')) {
+                    Ems.Proxy.addCourseTeacher(id, form, function(data) {
+                        if(data) {
+                            Ems.Proxy.getCourseDetails(id, function (result){
+                                var teacherTable = '';
+                                $.each(result.data.teachers, function(i, v) {
+                                    teacherTable += '<tr data-id = "'+v.id+'">'+
+                                                        '<td>'+(++i)+'</td>'+
+                                                        '<td>'+v.fullname+'</td>'+
+                                                        '<td>'+v.lessonType.value[Ems.lang]+'</td>'+
+                                                        '<td><span class = "fa fa-remove remove-course-teacher" data-id = "'+v.id+'"></span></td>'+
+                                                        '</tr>'
+                                    
+                                })
+                                $('#main-div #course-teacher-table tbody').html(teacherTable)
+                            })
+                        }
+                    })
+                }
+            } else {
+                var teacherName = $('.course-teacher').find('option:selected').text();
+                var lessonTypeName = $('.course-lesson-type').find('option:selected').text();
+                var length = $('#course-teacher-table tbody tr').length;
+                var html = '<tr data-id = "' + teacherId + '" data-type = "' + lessonType + '">' +
+                        '<td>' + (++length) + '</td>' +
+                        '<td>' + teacherName + '</td>' +
+                        '<td>' + lessonTypeName + '</td>' +
+                        '<td><span class="fa fa-remove remove-fake-teacher"></span></td>' +
+                        '</tr>';
+
+                $('#course-teacher-table tbody').append(html);
+            }
+        });
+
+        $('#main-div').on('click', '.remove-fake-teacher', function () {
+            $(this).parents('tr').remove();
+            if ( $('#main-div #course-teacher-table tbody').has('tr').length > 0) {
+                var count = 0;
+                $('#main-div #course-teacher-table tbody tr').each(function() {
+                    $(this).find('td:eq(0)').text(++count);
+                })
+            }
+        });
+        
+        $('.course-group-name-filter').on('change', function() {
+//                        var eduPlanId = $('.course-edu-plan').val();
+                        var eduPlanId = $('.edu-plan-filter').val();
+                        var groupId = $(this).val();
+                        Ems.Proxy.getEduplanStudentByGroupId(eduPlanId, groupId, function(data) {
+                            if(data && data.data) {
+                                var html = '';
+                                $.each(data.data, function(i, v) {
+                                    html += '<tr>'+
+                                            '<td>'+(++i)+'</td>'+
+                                            '<td>'+v.fullname+'</td>'+
+                                            '<td><input value = "'+v.id+'"type="checkbox" class="student-check" style="opacity: 1; position: sticky;"/></td>'+
+//                                            '<td><input type="checkbox" class="student-edu-check" style="opacity: 1; position: sticky;"/></td>'+
+                                            '</tr>'
+                                    
+                                })
+                                $('.all-student-check').prop('checked', false);
+                                $('.all-student-buy-edu-check').prop('checked', false); 
+                                $('#course-static-student-table tbody').html(html);
+                            }
+                        })
+        });
+        
+        $('.all-student-check').on('click', function() {
+            var checkedStatus = this.checked;
+            $('#course-static-student-table tbody tr').each(function() {
+                $(this).find('.student-check').prop('checked', checkedStatus)
+            });
+        })
+        
+        $('.all-student-buy-edu-check').on('click', function() {
+            var checkedStatus = this.checked;
+            $('#course-static-student-table tbody tr').each(function() {
+                $(this).find('.student-edu-check').prop('checked', checkedStatus)
+            });
+        })
+        
+        $('#main-div').on('click', '.btn-course-back', function() {
+            $('#main-div div.menu').removeClass('hidden');
+            $('.module-block[data-id="' + Ems.currModule + '"]').click();
+$('.sdie-c').fadeIn(1);
+                $('.col-sm-3 + .slimScrollDiv').css('width', '75%');
+                $('.content-part').css('padding-left', '0');
+        })
+        
+        $('#main-div').on('click', '.add-student', function() {
+            $('.all-student-check').prop('checked', false)
+            $('.all-student-buy-edu-check').prop('checked', false)
+            $('.student-check').prop('checked', false)
+            $('.student-edu-check').prop('checked', false)
+            $('.student-modal').modal('show');
+        });
+        
+        
+        
+        
+        
+        $('#main-div').on('click', '.remove-static-student', function() {
+            $(this).parents('tr').remove();
+            if ( $('#main-div #course-student-table tbody').has('tr').length > 0) {
+                var count = 0;
+                $('#main-div #course-student-table tbody tr').each(function() {
+                    $(this).find('td:eq(0)').text(++count);
+                })
+            }
+            
+            
+        });
+        
+        $('body').on('change', '.edu-plan-filter', function() {
+            var eduPlanId = $(this).val();
+            
+             Ems.Proxy.getEduplanStudentGroup(eduPlanId, function(data) {
+                    if(data && data.data) {
+                        var html = '';            
+                        $.each(data.data, function(i, v) {
+                            html +='<option value="'+v.id+'">'+v.name+'</option>';
+                        })
+                        $('.course-group-name-filter').html(html);
+                        var groupId = $('.course-group-name-filter').val();
+                        Ems.Proxy.getEduplanStudentByGroupId(eduPlanId, groupId, function(data) {
+                            if(data && data.data) {
+                                var html = '';
+                                $.each(data.data, function(i, v) {
+                                    html += '<tr>'+
+                                            '<td>'+(++i)+'</td>'+
+                                            '<td>'+v.fullname+'</td>'+
+                                            '<td><input value = "'+v.id+'"type="checkbox" class="student-check" style="opacity: 1; position: sticky;"/></td>'+
+//                                            '<td><input type="checkbox" class="student-edu-check" style="opacity: 1; position: sticky;"/></td>'+
+                                            '</tr>'
+                                    
+                                })
+                                $('#course-static-student-table tbody').html(html);
+                            }
+                        })
+                    }
+                });
+        })
+    })
+</script>

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<style>
+    .reg.dropdown-toggle {
+
+    padding: 0 12px 0 22px;
+
+}
+</style>
+<div class="row row-table no-margin top-row">
+    <div class="col-md-12 panel-body p-0 ss ">
+        <div class="panel panel-white tableScroll">
+            <div class="table-responsive">
+                <div class="panel-heading">
+                    <h3 class="panel-title education-plan-name-h3" placeholder="Soraqça">Info</h3>
+                    <div class="eduplan-subject-filter">
+                        <select class="form-control kafedra-filter" >
+
+                        </select>
+                    </div>
+                    <div class="add-new operation-type-button" style="top: 7px;">
+                        <div id="buttons_div" class="btn-group dropdown-func">
+                            <div class="btn btn-default reg dropdown-toggle cog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            </div>
+                            <ul id="module_sub_operations" class="dropdown-menu plus special">
+
+                            </ul>
+                        </div>
+                    </div>
+                    <button data-i18n="back" class="btn btn-block btn-danger btn-back">
+                        <i class="fa fa-arrow-left"></i>Geri</button>
+                </div>
+                <ul class="three-tabs nav panel-title" style="margin-bottom: 20px;">
+                    <li class="col-sm-6" style="margin-top: 16px;">
+                        <a data-toggle="tab" href="#tab1" class=" first-tab active">
+                            <span class="panel-body">Fənn məlumatları</span>
+                        </a>
+                    </li>
+                    <li class="col-sm-6">
+                        <a data-toggle="tab" href="#tab2" class=" second-tab">
+                            <span class="panel-body">Tələbələr</span>
+                        </a>
+                    </li>
+                </ul>
+                <div class="row subject-scroll">
+                    <div class="panel-body p-r-0 p-l-0">
+                        <div class="tab-content">
+                            <div id="tab1" class=" tab-pane fade in active padding-0">
+                                <div class="panel-white panel table-scroll">
+                                    <table id="edu-plan-subject-table" class="table table-celled table-hover long-last-td" style="white-space: pre-line">
+                                        <thead>
+                                        <tr>
+                                            <th>№</th>
+                                            <th>Fənnin kodu</th>
+                                            <th>Fənnin adı</th>
+                                            <th>Kredit sayı</th>
+                                            <th>Ümumi saatlar</th>
+                                            <th>Auditoriya kənar saatlar</th>
+                                            <th>Auditoriya daxili saatlar</th>
+                                            <th>Mühazirə</th>
+                                            <th>Seminar</th>
+                                            <th>Laboratoriya</th>
+                                            <th>Həftəlik dərs yükü</th>
+                                            <th>Semestr</th>
+                                            <th>Asılı fənlər</th>
+                                            <th></th>
+                                        </tr>
+                                        </thead>
+
+                                        <tbody>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div id="tab2" class="tab-pane fade">
+                                <div class="panel panel-white table-scroll">
+                                    <table id="eduplan-student-table" class="table table-celled table-hover long-last-td" style="white-space: pre-line">
+
+                                        <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>S.A.A</th>
+                                            <th>Qrup nömrəsi</th>
+                                        </tr>
+                                        </thead>
+
+                                        <tbody>
+
+                                        </tbody>
+                                    </table>
+                                    <div class="space-for-footer">
+                                        <!--<div id="load_more_div" class="col-sm-12 flex-input">-->
+                                        <!--<div class="buttons-row col-md-6 col-md-offset-3" style="margin-top: 49px;">
+                                            <div data-page="student_view" class="col-md-6 col-md-offset-3">
+                                                <button data-i18n="close" class="btn btn-block btn-danger btn-back">Bağla</button>
+                                            </div>
+                                        </div>-->
+                                        <!--</div>-->
+                                    </div><br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal edu-plan-topic-modal">
+    <div class="modal-dialog document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4  class="modal-title">Mövzu əlavə et</h4>
+            </div>
+            <div class="modal-body">
+                <form class="eduplan-subject-topic-form">
+                    <div class="form-group">
+                        <label for="add-serial">Fənn</label>
+                        <div class="prepend-icon">
+                            <select eduplan-subject-topic-required class="form-control eduplan-subject-list no-padding" name="eduplanSubjectId">
+
+                            </select>
+                        </div>
+                    </div>
+<!--                <div class="form-group">
+                    <label for="add-serial">Fənnin tipi</label>
+                    <div class="prepend-icon">
+                        <select eduplan-required class="form-control eduplan-subject-type no-padding" name = "eduLevelId">
+
+                        </select>
+                    </div>
+                </div>-->
+                <div class="form-group">
+                    <label for="add-number">Mövzu</label>
+                    <div class="prepend-icon">
+                        <input eduplan-subject-topic-required class="form-control eduplan-topic-name no-padding" name="topicName"/>
+                    </div>
+                </div>
+                </form>
+                <div class="form-group">
+                    <button data-i18n="buttons.ok" doc-confirm type="button" class="btn btn-primary btn-eduplan-topic-submit">Əlavə et</button>
+                    <!--<button data-i18n="cancel" type="button" class="btn btn-danger" data-dismiss="modal" aria-label="Close">Geri</button>-->
+                </div>
+                <div class="table-responsive responsive-eduplan-topic-table">
+                    <table id="eduplan-topic-table" class="table table-celled table-hover long-last-td" style="white-space: pre-line">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <!--<th>Fənnin adı</th>-->
+                                <th>Mövzu</th>
+                                <th></th>
+
+                        </tr>
+                        </thead>
+
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                </div>
+                
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal edu-plan-subject-evaluation-modal">
+    <div class="modal-dialog document">
+        <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4  class="modal-title">Qiymətləndirmə tipi əlavə etmək</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="main-subject-div">
+                        <form id="edu-plan-subject-evaluation-form">
+                            <div class="form-group">
+                                    <label for="add-serial">Cari fənn kataloqu</label>
+                                    <div class="prepend-icon">
+                                        <select eduplan-subject-evaluation-required class="form-control eduplan-subject-this-list-evaluation no-padding" name = "id">
+
+                                        </select>
+                                    </div>
+                                </div>
+                                    <div class="form-group">
+                                        <label for="add-serial">Qiymətləndirmə tipi</label>
+                                        <div class="prepend-icon">
+                                            <select eduplan-subject-evaluation-required class="form-control edu-plan-evaluation-type no-padding" name = "evaluationTypeId">
+
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="add-serial">Ətraflı</label>
+                                        <div class="prepend-icon">
+                                            <table id="evaluation-type-table" class="table table-celled table-hover long-last-td" style="white-space: pre-line">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Adı</th>
+                                                        <th>Bal</th>
+                                                        <th>Avtomatik</th>
+                                                    </tr>
+                                                </thead>
+
+                                                <tbody>
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                        </form>
+                    </div>
+                    
+                </div>
+                <div class="modal-footer flex-img">
+                    <button data-i18n="ok" doc-confirm type="button" class="btn btn-primary btn-eduplan-subject-evaluation-submit">OK</button>
+                    <button data-i18n="cancel" type="button" class="btn btn-danger" data-dismiss="modal" aria-label="Close">Cancel</button>
+                </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        Ems.i18n(Ems.lang);
+       $('.btn-back').on('click', function() {
+            $('#main-div div.menu').removeClass('hidden');
+            // $('body').find('#eduplan-student-table').slimScroll();
+            $('.module-block[data-id="' + Ems.currModule + '"]').click();
+                setTimeout(function(){
+                    $('.sdie-c').fadeIn(1);
+                    $('.col-sm-3 + .slimScrollDiv').css('width', '75%');
+                    $('.content-part').css('padding-left', '0');
+                }, 100)
+           $('body').find('div.left-fixed-menu + div.content-part').css('width','calc(100% - 280px');
+        });
+        
+        Ems.Proxy.getFilteredStructureList(Ems.structureId, '1000074', 0, function (specialities) { 
+            if (specialities) {
+                var html = '<option value="0">' + 'Kafedra' + '</option>';
+            
+                $.each(specialities, function (i, v) {
+                    html += '<option parent="' + v.parent.id + '" value="' + v.id + '">' + v.name[Ems.lang] + '</option>';
+                });
+            } 
+            $('.kafedra-filter').html(html);
+            
+//            $('.eduplan-subject-kafedra').select2()
+
+        });
+
+        $('body').find('.table-scroll').slimScroll();
+        
+        $('.kafedra-filter').on('change', function(){
+            var id = $(this).val();
+            var eduPlanId = $('body #buttons_div').attr('data-id');
+            Ems.Proxy.getEducationPlanDetails(eduPlanId, id, function (data) {
+                if (data && data.data) {
+                    $('#main-div #buttons_div').attr('data-spec-id', data.data.org.id);
+                    $('#main-div #edu-plan-subject-table tbody').html(Ems.Service.parseEducationPlanSubjects(data.data.subjects));
+                    var html = '<option value = "0">Asılılıq yoxdur</option>';
+                    $.each(data.data.allSubjects, function (i, v) {
+//                                if (v.id > 0 && v.chosenStatus == 0) {
+                            html += '<option value = "' + v.id + '">' + v.code + ' - ' + v.dicName.value[Ems.lang] + (v.chosenStatus > 0 ? ' (Seçmə)' : '') + '</option>'
+//                                }
+                    });
+                    $('.eduplan-subject-dependency-catalog').html(html);
+                }
+            })
+        });
+        // $('body').find('.subject-scroll').slimScroll();
+        // $('body').find('.tableScroll').slimScroll();
+
+
+
+        $('.edu-plan-evaluation-type').on('change', function () {
+            var id = $(this).val();
+            Ems.Proxy.getEvaluationTypeDetails(id, function (data) {
+                if (data && data.data) {
+                    $('#main-div #evaluation-type-table tbody').html('');
+                    $('#main-div #evaluation-type-table tbody').html(Ems.Service.parseEvaluationTypes(data.data));
+                }
+            })
+        })
+    })
+</script>

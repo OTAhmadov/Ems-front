@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<style>
+    .reg.dropdown-toggle {
+
+        padding: 0 12px 0 22px;
+
+    }
+</style>
+<div class="row row-table no-margin top-row">
+    <div class="col-md-12 panel-body p-0 ss ">
+        <div class="panel panel-white -scroll">
+            <div class="panel-heading">
+                <h3 class="panel-title education-plan-name-h3" placeholder="Soraqça">Info</h3>
+                <div class="eduplan-subject-filter btn-group">
+                    <select class="form-control kafedra-filter">
+
+                    </select>
+                </div>
+                <div class="add-new operation-type-button" style="top: 7px;">
+                    <div id="buttons_div" class="btn-group dropdown-func">
+                        <div class="btn btn-default reg dropdown-toggle cog" data-toggle="dropdown" aria-haspopup="true"
+                             aria-expanded="false">
+                        </div>
+                        <ul id="module_sub_operations" class="dropdown-menu plus special">
+
+                        </ul>
+                    </div>
+                </div>
+                <button data-i18n="back" class="btn btn-block btn-danger btn-back">
+                    <i class="fa fa-arrow-left"></i>Geri</button>
+            </div>
+            <div class="panel-body">
+                <div class="table-responsive">
+                    <table id="edu-plan-subject-table" class="table table-celled " style="white-space: pre-line">
+                        <!--table-hover long-last-td-->
+                        <thead>
+                        <tr>
+                            <th>№</th>
+                            <th>Fənnin kodu</th>
+                            <th>Fənnin adı</th>
+                            <th>Kredit sayı</th>
+                            <th>Ümumi saatlar</th>
+                            <th>Auditoriya kənar saatlar</th>
+                            <th>Auditoriya daxili saatlar</th>
+                            <th>Mühazirə</th>
+                            <th>Seminar</th>
+                            <th>Laboratoriya</th>
+                            <th>Həftəlik dərs yükü</th>
+                            <th>Semestr</th>
+                            <th>Asılı fənlər</th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                    <!--table-hover long-last-td-->
+                    <!--<hr>-->
+                    <div class="space-for-footer">
+                    </div>
+                    <!--<div id="load_more_div" class="col-sm-12 flex-input">-->
+                    <!--<div class="buttons-row col-md-6 col-md-offset-3" style="margin-top: 49px;">
+                        <div data-page="student_view" class="col-md-6 col-md-offset-3">
+                            <button data-i18n="close" class="btn btn-block btn-danger btn-back">Bağla</button>
+                        </div>
+                    </div>-->
+                    <!--</div>-->
+                </div>
+                <br>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal edu-plan-subject-modal">
+    <div class="modal-dialog document">
+        <div class="modal-content">
+            <form class="edu-plan-subject-form">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Tədris planına fənn əlavə etmək</h4>
+                </div>
+                <div class="modal-body">
+                    <input id="edu-plan-id" class="hidden" name="eduPlanId"/>
+                    <div class="form-group check-block-div">
+                        <div class="">
+                            <label for="chosenStatus" class="control-label" data-i18n="choosenLesson"
+                                   style="vertical-align: middle;"></label>
+                            <input data-checked="0" type="checkbox" class="form-control eduplan-subject-chosen-check"
+                                   style="opacity: 1; position: static; margin-left: 13px;display: inline-block; vertical-align: sub; margin-top: 0; "
+                                   name="chosenStatus">
+
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-serial">Fənnin bloku</label>
+                        <div class="">
+                            <select eduplan-subject-required eduplan-choose-subject-required
+                                    class="form-control eduplan-subject-block no-padding" name="subjectBlockId">
+
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group specialization" style="display: none">
+                        <label for="add-serial">İxtisaslaşma</label>
+                        <div class="">
+                            <select class="form-control eduplan-specialization no-padding" name="specializationId">
+
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-serial">Kafedra</label>
+                        <div class="">
+                            <select class="form-control eduplan-subject-kafedra no-padding">
+
+                            </select>
+                        </div>
+                    </div>
+                    <div class="main-subject-div">
+                        <div class="form-group">
+                            <label for="add-serial">Fənn</label>
+                            <div class="">
+                                <select eduplan-subject-required class="form-control eduplan-subject-catalog no-padding"
+                                        name="subjectId">
+
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="add-serial">Fənnin kodu</label>
+                            <div class="">
+                                <input eduplan-subject-required class="form-control eduplan-subject-code no-padding"
+                                       name="code"/>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="chosen-subject-div hidden">
+                        <div class="form-group">
+                            <label for="add-serial">Fənn kataloqu</label>
+                            <div class="">
+                                <select class="form-control eduplan-chosen-subject-catalog no-padding" multiple=""
+                                        name="chosenSubjectId">
+
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="">
+                                <table class="chosen-subject-table table table-block ">
+                                    <thead>
+                                    <tr>
+                                        <td>Fənnin adı</td>
+                                        <td>Kodu</td>
+                                        <td></td>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="add-serial">Semestr</label>
+                        <div class="">
+                            <select eduplan-subject-required eduplan-choose-subject-required
+                                    class="form-control eduplan-subject-semestr no-padding" name="semesterId">
+
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-serial">Kredit sayı</label>
+                        <div class="">
+                            <input eduplan-subject-required eduplan-choose-subject-required
+                                   class="form-control eduplan-subject-credit no-padding" name="credit"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-serial">Ümumi saatlar</label>
+                        <div class="">
+                            <input eduplan-subject-required eduplan-choose-subject-required
+                                   class="form-control eduplan-subject-hour no-padding" name="hours"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="add-serial">Mühazirə</label>
+                                <div class="">
+                                    <input class="form-control eduplan-subject-mhour no-padding" name="mHours"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="add-serial">Seminar</label>
+                                <div class="">
+                                    <input class="form-control eduplan-subject-shour no-padding" name="sHours"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="add-serial">Laboratoriya</label>
+                                <div class="">
+                                    <input class="form-control eduplan-subject-lhour no-padding" name="lHours"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="add-serial">Auditoriya kənar saatlar</label>
+                                <div class="">
+                                    <input disabled class="form-control eduplan-subject-outhour no-padding"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="add-serial">Auditoriya daxili saatlar</label>
+                                <div class="">
+                                    <input disabled class="form-control eduplan-subject-inhour no-padding"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="add-serial">Həftəlik dərs yükü</label>
+                                <div class="">
+                                    <input class="form-control eduplan-subject-week-charge no-padding"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer flex-img">
+                    <button data-i18n="buttons.ok" doc-confirm type="button"
+                            class="btn btn-primary btn-eduplan-subject-submit">OK
+                    </button>
+                    <button data-i18n="cancel" type="button" class="btn btn-danger" data-dismiss="modal"
+                            aria-label="Close">Cancel
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="modal edu-plan-subject-dependency-modal">
+    <div class="modal-dialog document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">Asılı fənn əlavə etmək</h4>
+            </div>
+            <div class="modal-body">
+                <div class="main-subject-div">
+                    <div class="form-group">
+                        <label for="add-serial">Cari fənn kataloqu</label>
+                        <div class="">
+                            <select eduplan-subject-dependency-required
+                                    class="form-control eduplan-subject-this-list no-padding" name="id">
+
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-serial">Asılı fənn kataloqu</label>
+                        <div class="">
+                            <select eduplan-subject-dependency-required
+                                    class="form-control eduplan-subject-dependency-catalog no-padding" name="subjectId">
+
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer flex-img">
+                <button data-i18n="buttons.ok" doc-confirm type="button"
+                        class="btn btn-primary btn-eduplan-subject-dependency-submit">OK
+                </button>
+                <button data-i18n="cancel" type="button" class="btn btn-danger" data-dismiss="modal" aria-label="Close">
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal edu-plan-subject-paralel-modal">
+    <div class="modal-dialog document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">Paralel fənn əlavə etmək</h4>
+            </div>
+            <div class="modal-body">
+                <div class="main-subject-div">
+                    <div class="form-group">
+                        <label for="add-serial">Cari fənn kataloqu</label>
+                        <div class="">
+                            <select eduplan-subject-paralel-required
+                                    class="form-control eduplan-subject-this-list-paralel no-padding" name="id">
+
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-serial">Paralel fənn kataloqu</label>
+                        <div class="">
+                            <select eduplan-subject-paralel-required
+                                    class="form-control eduplan-subject-paralel-catalog no-padding" name="subjectId">
+
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer flex-img">
+                <button data-i18n="buttons.ok" doc-confirm type="button"
+                        class="btn btn-primary btn-eduplan-subject-paralel-submit">OK
+                </button>
+                <button data-i18n="cancel" type="button" class="btn btn-danger" data-dismiss="modal" aria-label="Close">
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal edu-plan-subject-evaluation-modal">
+    <div class="modal-dialog document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">Qiymətləndirmə tipi əlavə etmək</h4>
+            </div>
+            <div class="modal-body">
+                <div class="main-subject-div">
+                    <form id="edu-plan-subject-evaluation-form">
+                        <div class="form-group">
+                            <label for="add-serial">Cari fənn kataloqu</label>
+                            <div class="">
+                                <select eduplan-subject-evaluation-required
+                                        class="form-control eduplan-subject-this-list-evaluation no-padding" name="id">
+
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="add-serial">Qiymətləndirmə tipi</label>
+                            <div class="">
+                                <select eduplan-subject-evaluation-required
+                                        class="form-control edu-plan-evaluation-type no-padding"
+                                        name="evaluationTypeId">
+
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="add-serial">Ətraflı</label>
+                            <div class="">
+                                <table id="evaluation-type-table" class="table table-celled table-hover long-last-td"
+                                       style="white-space: pre-line">
+                                    <thead>
+                                    <tr>
+                                        <th>Adı</th>
+                                        <th>Bal</th>
+                                        <th>Avtomatik</th>
+
+                                    </tr>
+                                    </thead>
+
+                                    <tbody>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+            <div class="modal-footer flex-img">
+                <button data-i18n="buttons.ok" doc-confirm type="button"
+                        class="btn btn-primary btn-eduplan-subject-evaluation-submit">OK
+                </button>
+                <button data-i18n="cancel" type="button" class="btn btn-danger" data-dismiss="modal" aria-label="Close">
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal edu-plan-topic-modal">
+    <div class="modal-dialog document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">Mövzu əlavə et</h4>
+            </div>
+            <div class="modal-body">
+
+
+                <form class="eduplan-subject-topic-form">
+                    <div class="form-group">
+                        <label for="add-serial">Fənn</label>
+                        <div class="">
+                            <select eduplan-subject-topic-required class="form-control eduplan-subject-list no-padding"
+                                    name="eduplanSubjectId">
+
+                            </select>
+                        </div>
+                    </div>
+                    <!--                <div class="form-group">
+                                        <label for="add-serial">Fənnin tipi</label>
+                                        <div class="prepend-icon">
+                                            <select eduplan-required class="form-control eduplan-subject-type no-padding" name = "eduLevelId">
+
+                                            </select>
+                                        </div>
+                                    </div>-->
+                    <div class="form-group">
+                        <label for="add-number">Mövzu</label>
+                        <div class="">
+                            <input eduplan-subject-topic-required class="form-control eduplan-topic-name no-padding"
+                                   name="topicName"/>
+                        </div>
+                    </div>
+                </form>
+                <div class="form-group">
+                    <button data-i18n="buttons.ok" doc-confirm type="button"
+                            class="btn btn-primary btn-eduplan-topic-submit">Əlavə et
+                    </button>
+                    <!--<button data-i18n="cancel" type="button" class="btn btn-danger" data-dismiss="modal" aria-label="Close">Geri</button>-->
+                </div>
+                <div class="table-responsive responsive-eduplan-topic-table">
+                    <table id="eduplan-topic-table" class="table table-celled table-hover long-last-td"
+                           style="white-space: pre-line">
+                        <thead>
+                        <tr>
+                            <th>No</th>
+                            <!--<th>Fənnin adı</th>-->
+                            <th>Mövzu</th>
+                            <th></th>
+
+                        </tr>
+                        </thead>
+
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal edu-plan-same-subject-modal">
+    <div class="modal-dialog document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">Oxşar fənn əlavə et</h4>
+            </div>
+            <div class="modal-body">
+
+
+                <form class="eduplan-subject-topic-form">
+                    <div class="form-group">
+                        <label for="add-serial">Cari fənn kataloqu</label>
+                        <div class="">
+                            <select eduplan-subject-same-required class="form-control eduplan-subject-this-list-same no-padding">
+
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-serial">Universitet</label>
+                        <div class="">
+                            <select eduplan-subject-same-required class="form-control uni-list no-padding">
+
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-serial">Tədris planı</label>
+                        <div class="">
+                            <select eduplan-subject-same-required class="form-control eduplan-list no-padding">
+
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-serial">Oxşar Fənn kataloqu</label>
+                        <div class="">
+                            <select eduplan-subject-same-required class="form-control same-eduplan-subject-list no-padding" name="eduplanSubjectId">
+
+                            </select>
+                        </div>
+                    </div>
+                    
+                </form>
+                <div class="form-group">
+                    <button data-i18n="buttons.ok" doc-confirm type="button"
+                            class="btn btn-primary btn-eduplan-same-subject-submit">Əlavə et
+                    </button>
+                    <!--<button data-i18n="cancel" type="button" class="btn btn-danger" data-dismiss="modal" aria-label="Close">Geri</button>-->
+                </div>
+                <div class="table-responsive responsive-eduplan-topic-table">
+                    <table id="eduplan-same-subject-table" class="table table-celled table-hover long-last-td"
+                           style="white-space: pre-line">
+                        <thead>
+                        <tr>
+                            <th>No</th>
+                            <!--<th>Fənnin adı</th>-->
+                            <th>Fənn</th>
+                            <th></th>
+
+                        </tr>
+                        </thead>
+
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(function () {
+        Ems.i18n(Ems.lang);
+
+        Ems.Proxy.loadDictionariesByTypeId(1000060, 0, function (semestr) {
+
+            $('.eduplan-subject-semestr').html(Ems.Service.parseDictionaryForSelect(semestr));
+        });
+
+        Ems.Proxy.loadDictionariesByTypeId(1000061, 0, function (subjectBlock) {
+
+            $('.eduplan-subject-block').html(Ems.Service.parseDictionaryForSelect(subjectBlock));
+        });
+
+        Ems.Proxy.getFilteredStructureList(Ems.structureId, '1000074', 0, function (specialities) {
+            if (specialities) {
+                var html = '<option value="0">' + "Kafedra" + '</option>';
+
+                $.each(specialities, function (i, v) {
+                    html += '<option parent="' + v.parent.id + '" value="' + v.id + '">' + v.name[Ems.lang] + '</option>';
+                });
+            }
+            $('.eduplan-subject-kafedra').html(html);
+            $('.kafedra-filter').html(html);
+
+
+        });
+        $('body').find('.-scroll').slimScroll();
+
+        $('.eduplan-subject-kafedra').on('change', function () {
+            var id = $(this).val();
+            Ems.Proxy.getSubjectsByKafedraId(id, function (data) {
+
+                if (data && data.data) {
+                    var html = '<option value="0">' + Ems.dictionary[Ems.lang]["select"] + '</option>';
+
+                    $.each(data.data, function (i, v) {
+                        html += '<option value="' + v.id + '">' + v.subject.value[Ems.lang] + '</option>';
+                    });
+                }
+                $('.eduplan-subject-catalog').html(html);
+                $('.eduplan-chosen-subject-catalog').html(html);
+                $('.eduplan-chosen-subject-catalog [value="0"]').remove();
+
+
+            })
+        });
+
+
+        $('.eduplan-subject-block').on('change', function () {
+            var id = $(this).val();
+            var specId = $('#main-div #buttons_div').attr('data-spec-id')
+            $('.specialization').hide(500);
+            if (id == 1007950) {
+                $('.specialization').show(500);
+                Ems.Proxy.getFilteredStructureList(specId, '1002306', 0, function (subSpeciality) {
+                    var html = '<option value="0">' + Ems.dictionary[Ems.lang]['select'] + '</option>';
+                    if (subSpeciality) {
+                        $.each(subSpeciality, function (i, v) {
+                            html += '<option  value="' + v.id + '">' + v.name[Ems.lang] + '</option>';
+                        });
+
+                    }
+                    $('.eduplan-specialization').html(html);
+                });
+            }
+
+        });
+
+        $('.eduplan-subject-credit').on('change', function () {
+            var value = $(this).val();
+            $('.eduplan-subject-hour').val(value * 30);
+            $('.eduplan-subject-outhour').val((value * 30) / 2);
+            $('.eduplan-subject-inhour').val((value * 30) / 2);
+            $('.eduplan-subject-mhour').val((value * 30) / 2);
+            $('.eduplan-subject-week-charge').val(($('.eduplan-subject-inhour').val() / 15).toFixed(0));
+
+        });
+
+        $('.eduplan-subject-hour').on('change', function () {
+            var value = $(this).val();
+            $('.eduplan-subject-outhour').val((value * 30) / 2);
+            $('.eduplan-subject-inhour').val((value * 30) / 2);
+            $('.eduplan-subject-mhour').val((value * 30) / 2);
+            $('.eduplan-subject-week-charge').val(($('.eduplan-subject-inhour').val() / 15).toFixed(0));
+        })
+
+
+        $('#main-div').on('keyup', '.eduplan-subject-mhour, .eduplan-subject-shour, .eduplan-subject-lhour', function () {
+            var obj = $(this);
+            var mhours = +$('.eduplan-subject-mhour').val();
+            var shours = +$('.eduplan-subject-shour').val();
+            var lhours = +$('.eduplan-subject-lhour').val();
+            var hours = +$('.eduplan-subject-hour').val();
+            var totalhours = mhours + shours + lhours;
+            if (totalhours > $('.eduplan-subject-hour').val()) {
+                obj.val(
+                    function (index, value) {
+                        return value.substr(0, value.length - 1);
+                    })
+            } else {
+                $('.eduplan-subject-outhour').val(hours - totalhours);
+                $('.eduplan-subject-inhour').val(totalhours);
+                $('.eduplan-subject-week-charge').val(($('.eduplan-subject-inhour').val() / 15).toFixed(0));
+
+            }
+
+
+        })
+
+        $('.eduplan-subject-chosen-check').on('change', function () {
+            var obj = $(this);
+            var checked = obj.attr('data-checked');
+            $('#main-div .blank-required-field').removeClass('blank-required-field');
+            if (checked == 1) {
+                $('.chosen-subject-div').addClass('hidden');
+                $('.main-subject-div').removeClass('hidden');
+                obj.attr('data-checked', '0')
+            } else if (checked == 0) {
+                $('.chosen-subject-div').removeClass('hidden');
+                $('.main-subject-div').addClass('hidden');
+                obj.attr('data-checked', '1')
+            }
+        })
+
+        $('.eduplan-chosen-subject-catalog').on('change', function () {
+
+            var obj = $(this);
+            var html = ''
+            $.each(obj.val(), function (i, v) {
+                var name = $('.eduplan-subject-catalog [value="' + v + '"]').text();
+
+                html += '<tr data-id="' + v + '">' +
+                    '<th>' + name + '</th>' +
+                    '<th><input eduplan-choose-subject-required type="text"/></th>' +
+                    '<th><span class="fa fa-remove remove-static-subject" style="cursor:pointer;"></span></th>' +
+                    '</tr>'
+
+
+            })
+
+            $('.chosen-subject-table tbody').append(html);
+
+
+        })
+
+        $('#main-div').on('click', '.remove-static-subject', function () {
+
+            $(this).parents('tr').remove()
+        })
+        $('.btn-back').on('click', function () {
+            $('#main-div div.menu').removeClass('hidden');
+            $('.module-block[data-id="' + Ems.currModule + '"]').click();
+            $('.sdie-c').fadeIn(1);
+            $('.col-sm-3 + .slimScrollDiv').css('width', '75%');
+            $('.content-part').css('padding-left', '0');
+            $('body').find('div.left-fixed-menu + div.content-part').css('width','calc(100% - 280px');
+        });
+
+        $('#main-div').on('change', '.eduplan-subject-this-list', function () {
+            var subjectId = $(this).val();
+            Ems.Proxy.getEducationPlanDependencyBySubjectId(subjectId, function (data) {
+                if (data && data.data) {
+                    $('#main-div .eduplan-subject-dependency-catalog').val(data.data.id);
+                }
+            })
+        });
+
+        $('#main-div').on('change', '.eduplan-subject-this-list-paralel', function () {
+            var subjectId = $(this).val();
+            Ems.Proxy.getEducationPlanParalelBySubjectId(subjectId, function (data) {
+                if (data && data.data) {
+                    $('#main-div .eduplan-subject-paralel-catalog').val(data.data.id);
+                }
+            })
+        });
+
+        $('.kafedra-filter').on('change', function () {
+            var id = $(this).val();
+            var eduPlanId = $('body #buttons_div').attr('data-id')
+            Ems.Proxy.getEducationPlanDetails(eduPlanId, id, function (data) {
+                if (data && data.data) {
+                    $('#main-div #buttons_div').attr('data-spec-id', data.data.org.id)
+                    $('#main-div #edu-plan-subject-table tbody').html(Ems.Service.parseEducationPlanSubjects(data.data.subjects));
+                    var html = '<option value = "0">+ "Kafedra" + </option>';
+                    $.each(data.data.allSubjects, function (i, v) {
+//                                if (v.id > 0 && v.chosenStatus == 0) {
+                        html += '<option value = "' + v.id + '">' + v.code + ' - ' + v.dicName.value[Ems.lang] + (v.chosenStatus > 0 ? ' (Seçmə)' : '') + '</option>'
+//                                }
+
+                    })
+                    $('.eduplan-subject-dependency-catalog').html(html);
+                    $('.eduplan-subject-paralel-catalog').html(html);
+                }
+            })
+        });
+        $('.edu-plan-evaluation-type').on('change', function () {
+            var id = $(this).val();
+            Ems.Proxy.getEvaluationTypeDetails(id, function (data) {
+                if (data && data.data) {
+                    $('#main-div #evaluation-type-table tbody').html('');
+                    $('#main-div #evaluation-type-table tbody').html(Ems.Service.parseEvaluationTypes(data.data));
+                }
+            })
+        })
+        $('.eduplan-subject-this-list-evaluation').on('change', function () {
+            var id = $(this).val();
+            Ems.Proxy.getEducationPlanEvaluationType(id, function (result) {
+
+                if (result && result.data) {
+
+                    Ems.Proxy.getEvaluationTypes(function (data) {
+                        if (data && data.data) {
+                            var html = '<option value="0">Qiymətləndirmə tipi yoxdur</option>'
+                            $.each(data.data, function (i, v) {
+                                html += '<option value="' + v.nameType + '">' + v.name + '</option>'
+                            })
+                            $('#main-div .edu-plan-evaluation-type').html(html);
+                            $('#main-div .edu-plan-evaluation-type').val(result.data.evaId);
+                            if (result.data.evaId > 0) {
+                                Ems.Proxy.getEvaluationTypeDetails(result.data.evaId, function (data) {
+                                    if (data && data.data) {
+                                        $('#main-div #evaluation-type-table tbody').html(Ems.Service.parseEvaluationTypes(data.data));
+
+                                        $.each(result.data.details, function (i, v) {
+//                                            $('#main-div #evaluation-type-table tbody input[value="' + v.id + '"]').attr('disabled', 'disabled');
+                                            if (v.pointDetail == 0) {
+                                                $('#main-div #evaluation-type-table tbody input[value="' + v.evaluationType.id + '"]').removeAttr('checked');
+                                            }
+
+                                        })
+                                    }
+                                })
+                            } else {
+                                $('#main-div #evaluation-type-table tbody').html('');
+                            }
+
+                        }
+                    });
+
+                }
+            })
+        })
+        $('.uni-list').on('change', function() {
+            var uniId = $(this).val();
+                    
+            Ems.Proxy.getEduplanByUni(uniId, function(data) {
+                if(data && data.data) {
+                    var html = '<option value="0">Seçin</option>';
+                    $.each(data.data, function(i, v) {
+                        html += '<option value="'+v.id+'">'+v.name+'</option>'
+                    })
+
+                    $('.eduplan-list').html(html);
+                }
+            })
+        })
+        
+        $('.eduplan-list').on('change', function() {
+            var id = $(this).val();
+            
+            Ems.Proxy.getEducationPlanDetails(id, '',function (data) {
+                if (data && data.data) {
+                    var html='';
+                    $.each(data.data.allSubjects, function (i, v) {
+                            html += '<option value = "' + v.id + '">' + v.code + ' - ' + v.dicName.value[Ems.lang] + (v.chosenStatus > 0 ? ' (Seçmə)' : '') + '</option>'
+
+                    })
+                    $('.same-eduplan-subject-list').html(html);
+                }
+            })
+            
+        })
+        $('.eduplan-subject-this-list-same').on('change', function() {
+            var id = $(this).val();
+             Ems.Proxy.getSameEduplanSubject(id, function(data) {
+                var html = '';
+
+                $.each(data.data, function(i, v) {
+                    html +='<tr data-subject-id = "'+v.dicName.id+'">'+
+                            '<td>'+(++i)+'</td>'+
+                            '<td>'+v.eduplanName + ' / ' + v.dicName.value.az+'</td>'+
+                            '<td><i class="fa fa-remove remove-same-eduplan-subject" style="cursor:pointer" data-id="'+v.id+'"></i></td>'+
+                            '</tr>'
+
+                })
+                
+                $('body #eduplan-same-subject-table tbody').html(html);
+             });
+            
+        })
+
+    })
+</script>

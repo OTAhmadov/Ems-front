@@ -1,0 +1,185 @@
+<div class="row row-table no-margin top-row">
+    <div class="col-md-12 panel-body p-0">
+        <div class="panel ">
+            <div class="panel-heading">
+
+                <h3 class="panel-title">Tədris planına tələbənin əlavə edilməsi</h3>
+                <div class="search-butons" style="margin-top: -25px;">
+                    <a href="" data-i18n="close" class="btn-eduplan-back" placeholder="Bağla">Bağla</a>
+                </div>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <div class="panel panel-white table-scroll">
+                                <div style="overflow-y: hidden; overflow-x: hidden" class="table-responsive">
+
+                                    <table id="eduplan-student-table"
+                                           class="table table-celled table-hover long-last-td"
+                                           style="white-space: pre-line">
+                                        <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>S.A.A</th>
+                                            <th>Qrup nömrəsi</th>
+                                            <th>
+                                                <div class="add-new add-eduplan-student add-eduplan-student-none"><img
+                                                        src="assets/img/AddNew.png" alt="" width="20" height="20"></div>
+                                            </th>
+
+                                        </tr>
+                                        </thead>
+
+                                        <tbody>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--                     <div class="main-buttons">
+                                            <div class="col-md-6 col-md-offset-3">
+                                                <div class="form-group">
+                                                    <div class="">
+                                                        <button  class="btn btn-block btn-danger btn-eduplan-back " >Geri</button>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div> -->
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal student-modal">
+    <div class="modal-dialog document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">İştirakçılar</h4>
+            </div>
+            <div class="modal-body">
+
+                <div class="form-group">
+                    <label for="add-serial">Qrupun adı</label>
+                    <div class="">
+                        <select class="form-control eduplan-group-name-filter no-padding">
+
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+
+                    <div class="form-group-cover">
+
+                        <form class="eduplan-students-form">
+                            <div class="table-responsive static-student-table">
+                                <table id="eduplan-static-student-table"
+                                       class="table table-celled table-hover long-last-td"
+                                       style="white-space: pre-line">
+                                    <thead>
+                                    <tr>
+                                        <th>No</th>
+                                        <th>S.A.A</th>
+                                        <th><input type='checkbox' class="all-student-check"
+                                                   style="opacity: 1; position: sticky;"/></th>
+                                    </tr>
+                                    </thead>
+
+                                    <tbody>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer flex-img">
+                <button data-i18n="buttons.ok" doc-confirm type="button"
+                        class="btn btn-primary btn-static-eduplan-student-add" style="z-index: 9999999999">OK
+                </button>
+                <button style="z-index: 9999999999;" data-i18n="cancel" type="button" class="btn btn-danger" data-dismiss="modal" aria-label="Close">
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(function () {
+        Ems.i18n(Ems.lang);
+
+
+        $('.eduplan-group-name-filter').on('change', function () {
+
+            var groupId = $(this).val();
+            Ems.Proxy.getGroupStudents(groupId, function (data) {
+                if (data && data.data) {
+                    var html = '';
+                    $.each(data.data, function (i, v) {
+                        html += '<tr>' +
+                            '<td>' + (++i) + '</td>' +
+                            '<td>' + (v.lastName + ' ' + v.firstName + ' ' + v.middleName) + '</td>' +
+                            '<td><input value = "' + v.id + '" type="checkbox" class="student-check" style="opacity: 1; position: sticky;" name="students"/></td>' +
+                            '</tr>'
+
+                    })
+                    $('#eduplan-static-student-table tbody').html(html);
+                }
+            })
+        });
+
+        $('.all-student-check').on('click', function () {
+            var checkedStatus = this.checked;
+            $('#eduplan-static-student-table tbody tr').each(function () {
+                $(this).find('.student-check').prop('checked', checkedStatus)
+            });
+        })
+
+
+        $('#main-div').on('click', '.btn-eduplan-back', function () {
+            $('#main-div div.menu').removeClass('hidden');
+            // $('.module-block[data-id="' + Ems.currModule + '"]').click();
+            $('.sdie-c').fadeIn(1);
+            $('.col-sm-3 + .slimScrollDiv').css('width', '75%');
+            $('.content-part').css('padding-left', '0');
+            $('.tedris-area').css('right', '-100%');
+            return false
+        })
+
+        $('body').find('.table-scroll').slimScroll();
+        $('body').find('.static-student-table').slimScroll();
+
+        $('#main-div').on('click', '.add-eduplan-student', function () {
+            $('.all-student-check').prop('checked', false)
+            $('.student-check').prop('checked', false)
+            $('.student-modal').modal('show');
+        });
+
+        $('#main-div').on('click', '.remove-eduplan-student', function () {
+            var obj = $(this);
+            var id = $(this).attr('data-id');
+            Ems.Proxy.removeEduplanStudent(id, function (data) {
+
+                if ($('#main-div #eduplan-student-table tbody').has('tr').length > 0) {
+                    obj.parents('tr').remove();
+                    var count = 0;
+                    $('#main-div #eduplan-student-table tbody tr').each(function () {
+                        $(this).find('td:eq(0)').text(++count);
+                    })
+                }
+            })
+
+
+        })
+    })
+</script>

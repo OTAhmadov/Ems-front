@@ -1,0 +1,371 @@
+<div class="content-header">
+
+    <div class="con-head-left">
+        <span  placeholder="Soraqça" class="hed-title">Fənn üzrə qruplar</span>
+    </div>
+    <div class="con-head-right">
+        <div class="prepend-icon">
+            <input  id="subject_search" data-i18n="placeholder.search"  type="search" class=" name-filter" placeholder="search">
+
+        </div>
+        <div id="buttons_div" class="dropdown-func">
+            <div class="btn btn-default reg dropdown-toggle cog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                Ümumi əməliyyatlar
+            </div>
+            <ul id="module_operations" class="dropdown-menu calibrated">
+
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<div class="filters-block module_1000092">
+
+    <div class="btn-group">
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+            <i class="fa fa-ellipsis-horizontal"></i><span><span>Təhsil forması</span></span><i class="fa fa-angle-down"></i>
+        </button>
+        <ul id="edu-type-filter" class="dropdown-menu eduFilter">
+
+        </ul>
+    </div>
+    <div class="btn-group">
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+            <i class="fa fa-ellipsis-horizontal"></i><span><span>Tədris dili</span></span><i class="fa fa-angle-down"></i>
+        </button>
+        <ul id="edu-lang-filter" class="dropdown-menu eduFilter">
+
+        </ul>
+    </div>
+    <div class="btn-group">
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+            <i class="fa fa-ellipsis-horizontal"></i><span><span>Semestr</span></span><i class="fa fa-angle-down"></i>
+        </button>
+        <ul id="semestr-filter" class="dropdown-menu eduFilter">
+
+        </ul>
+    </div>
+    <div class="btn-group">
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+            <i class="fa fa-ellipsis-horizontal"></i><span><span>Status</span></span><i class="fa fa-angle-down"></i>
+        </button>
+        <ul id="status-filter" class="dropdown-menu eduFilter">
+
+        </ul>
+    </div>
+    <form class="course-search-form">
+            <input type="hidden" name="orgId" />
+            <input type="hidden" name="eduLangId" />
+            <input type="hidden" name="eduTypeId" />
+            <input type="hidden" name="semestrId" />
+            <input type="hidden" name="code" />
+            <input type="hidden" name="statusId" />
+    </form>
+
+</div>
+
+<div class="row ">
+    <div class="col-md-12">
+        <div class="panel panel-white table-scroll">
+
+            <div class="table-responsive" style="overflow: hidden">
+                <table id="course-table" class="table table-celled table-hover long-last-td">
+                    <thead>
+                        <tr>
+                            <th>№</th>
+                            <th>Fənnin adı</th>
+                            <th>Kodu</th>
+                            <th>Semestr</th>
+                            <th>Tədris dili</th>
+                            <th>Təhsil forması</th>
+                            <th>Təhsil səviyyəsi</th>
+                            <th>Status</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        
+                    </tbody>
+                </table>
+                <div class="space-for-footer">
+                    <div id="load_more_div" class="flex-input">
+                        <button data-i18n="load.more" data-table="course_module" class="btn loading-margins btn-load-more">Daha çox yüklə</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="academicGroupTree" class="modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header header-primary">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 data-i18n="university" class="modal-title">Ali təhsil müəssisəsi</h4>
+            </div>
+            <div class="modal-body scrollable">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="search-bar">
+                            <div class="prepend-icon">
+                                <input data-i18n="placeholder.search" class="form-control input-sm tree-search" type="search" placeholder="Search">
+                                <i class="fa fa-search"></i>
+                            </div>
+                        </div>
+                        <div id="org-list-tree" style="overflow: auto;">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer flex-img">
+                <button data-i18n="buttons.ok" type="button" class="btn btn-primary orgStructureFilter">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="qrup-area">
+    <div class="search-scroll"></div>
+</div>
+
+
+<script type="text/javascript">
+    $(function (e) {
+        $('.search-scroll, .table-scroll').slimScroll();
+
+        try {
+        Ems.i18n(Ems.lang);
+        $('#main-div .sub_modules_div').remove();
+        Ems.Proxy.loadOperations(Ems.currModule, function (operations) {
+            $('#buttons_div').find('ul').html(Ems.Service.parseOperations(operations, 1));
+            Ems.Proxy.getCourseList();
+            
+        });
+        
+        Ems.Proxy.loadDictionariesByTypeId(1000017, 0, function (eduType) {
+            var html = "<li data-id = '0'><a href='#'>" + Ems.dictionary[Ems.lang]['all'] + "</a></li>";
+            $.each(eduType, function (i, v) {
+                html += '<li data-id = "' + v.id + '"><a href="#">' + v.value[Ems.lang] + '</a></li>'
+            });
+            $('#edu-type-filter').html(html);
+            
+        });
+        
+        Ems.Proxy.loadDictionariesByTypeId(1000062, 0, function (semestr) {
+            var html = "<li data-id = '0'><a href='#'>" + Ems.dictionary[Ems.lang]['all'] + "</a></li>";
+            $.each(semestr, function (i, v) {
+                html += '<li data-id = "' + v.id + '"><a href="#">' + v.value[Ems.lang] + '</a></li>'
+            });
+            $('#semestr-filter').html(html);
+        });
+        
+        Ems.Proxy.loadDictionariesByTypeId(1000027, 0, function (eduLang) {
+            var html = "<li data-id = '0'><a href='#'>" + Ems.dictionary[Ems.lang]['all'] + "</a></li>";
+            $.each(eduLang, function (i, v) {
+                html += '<li data-id = "' + v.id + '"><a href="#">' + v.value[Ems.lang] + '</a></li>'
+            });
+            $('#edu-lang-filter').html(html);
+        });
+        
+        Ems.Proxy.loadOrgTreeByType(1000074, function (tree) {
+                    Ems.Service.commonParseTree(tree, 'org-list-accordion');
+        }, $('#org-list-accordion'));
+        
+        $('#main-div').on('click', '#org-list', function (event) {
+            try {
+                $('#academicGroupTree').modal({
+                    backdrop: false
+                });
+
+                var treeObj = $(':jstree').length;
+//                if (treeObj == 0) {
+                    if ($('#org-list-tree').attr('check') !== '1') {
+                        Ems.Proxy.loadOrgTreeByType(1000074, function (tree) {
+                            Ems.Service.commonParseTree(tree, 'org-list-tree');
+                            $('.tree-preloader').remove();
+                        }, $('#org-list-tree'));
+                        var searchString = $('#main-div .tree-search').val();
+                        $('#org-list-tree').jstree('search', searchString);
+                    }
+//                }
+                ;
+
+            }
+            catch (err) {
+                console.error(err);
+            }
+        });
+        
+        $(".tree-search").keyup(function () {
+            var searchString = $(this).val();
+            $('#org-list-tree').jstree('search', searchString);
+        });
+        
+        $('.orgStructureFilter').on('click', function (e) {
+            try {
+                var id = $('#org-list-tree li[aria-selected="true"]').attr('id');
+                var text = $('#org-list-tree li[aria-selected="true"]').find('a:first').text();
+                if (text.length > 0) {
+                    $('.btn.group-tree-modal').text(text);
+                    $('.btn.group-tree-modal').attr('data-id', id);
+                    $('#academicGroupTree').modal('hide');
+
+                    if (id !== 0) {
+                        $('body .subject-catalog-search-form input[name="orgId"]').val(id);
+                    }
+                    else {
+                        $('body .subject-catalog-search-form input[name="orgId"]').val('');
+                    }
+                    var params = $('body .subject-catalog-search-form').serialize();
+                    Ems.Proxy.getSubjectCatalogList('',params);
+                    $('.btn-load-more').removeAttr('data-page');
+                }
+                else {
+                    $.notify(Ems.dictionary[Ems.lang]['select_information'], {
+                        type: 'warning'
+                    })
+                }
+            }
+            catch (err) {
+
+            }
+        });
+        
+        
+        
+        $("#main-div #org-list-accordion").on("select_node.jstree", function (evt, data) {
+            try {
+                var path = data.instance.get_path(data.node, ',');
+                $('#headingOne').attr('data-node-id', data.node.id);
+                $('#headingOne').attr('data-node-text', path);
+                $('#university-list-h6').text(path);
+                $('#main-div .structure-id').val(data.node.id);
+                $('#main-div .structure-type-id').val(data.node.original.typeId);
+            }
+            catch (err) {
+                console.error(err);
+            }
+        });
+        
+        Ems.Proxy.loadDictionariesByTypeId(1000044, 0, function (status) {
+            var html = "<li data-id = '0'><a href='#'>" + Ems.dictionary[Ems.lang]['all'] + "</a></li>";
+            $.each(status, function (i, v) {
+                html += '<li data-id = "' + v.id + '"><a href="#">' + v.value[Ems.lang] + '</a></li>'
+            });
+            $('#status-filter').html(html);
+        });
+        
+         $('#main-div').on('click', '#edu-type-filter li', function (e) {
+            try {
+                var eduType = $(this).attr('data-id');
+                if (eduType !== 0) {
+                    $('body .course-search-form input[name="eduTypeId"]').val(eduType);
+                }
+                else {
+                    $('body .course-search-form input[name="eduTypeId"]').val('');
+                }
+                
+                $('.btn-load-more').removeAttr('data-page');
+                var params = $('body .course-search-form').serialize()
+                Ems.Proxy.getCourseList('', params);
+                $('.btn-load-more').removeAttr('data-page');
+
+            }
+            catch (err) {
+                console.error(err);
+            }
+
+        });
+        
+         $('#main-div').on('click', '#status-filter li', function (e) {
+            try {
+                var status = $(this).attr('data-id');
+                if (status !== 0) {
+                    $('body .course-search-form input[name="statusId"]').val(status);
+                }
+                else {
+                    $('body .course-search-form input[name="statusId"]').val('');
+                }
+                
+                $('.btn-load-more').removeAttr('data-page');
+                var params = $('body .course-search-form').serialize()
+                Ems.Proxy.getCourseList('', params);
+                $('.btn-load-more').removeAttr('data-page');
+
+            }
+            catch (err) {
+                console.error(err);
+            }
+
+        });
+        
+         $('#main-div').on('click', '#edu-lang-filter li', function (e) {
+            try {
+                var eduLang = $(this).attr('data-id');
+                if (eduLang !== 0) {
+                    $('body .course-search-form input[name="eduLangId"]').val(eduLang);
+                }
+                else {
+                    $('body .course-search-form input[name="eduLangId"]').val('');
+                }
+                
+                $('.btn-load-more').removeAttr('data-page');
+                var params = $('body .course-search-form').serialize()
+                Ems.Proxy.getCourseList('', params);
+                $('.btn-load-more').removeAttr('data-page');
+
+            }
+            catch (err) {
+                console.error(err);
+            }
+
+        });
+        
+         $('#main-div').on('click', '#semestr-filter li', function (e) {
+            try {
+                var semestr = $(this).attr('data-id');
+                if (semestr !== 0) {
+                    $('body .course-search-form input[name="semestrId"]').val(semestr);
+                }
+                else {
+                    $('body .course-search-form input[name="semestrId"]').val('');
+                }
+                
+                $('.btn-load-more').removeAttr('data-page');
+                var params = $('body .course-search-form').serialize()
+                Ems.Proxy.getCourseList('', params);
+                $('.btn-load-more').removeAttr('data-page');
+
+            }
+            catch (err) {
+                console.error(err);
+            }
+
+        });
+        
+        $('#main-div').on('change', '.name-filter', function() {
+            var code = $(this).val();
+            $('body .course-search-form input[name="code"]').val(code);
+            $('.btn-load-more').removeAttr('data-page');
+            var params = $('body .course-search-form').serialize()
+            Ems.Proxy.getCourseList('', params);
+            $('.btn-load-more').removeAttr('data-page');
+        })
+        
+        $('body').on('click', '#semestr-filter a, #edu-lang-filter a, #status-filter a, #edu-type-filter a', function (e) {
+            var text = $(this).text();
+            $(this).parents('.btn-group').find('button span').text(text);
+        });
+        
+        }
+        catch (err) {
+            console.error(err);
+        }
+    });
+
+</script>
+
+
