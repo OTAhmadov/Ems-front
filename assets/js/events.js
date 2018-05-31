@@ -3274,6 +3274,10 @@ setTimeout(function () {
             });
         }
     });
+
+    $(".main-img").on("click", function () {
+        $('.user-info').toggleClass("helloWorld");
+    });
         
     
 });

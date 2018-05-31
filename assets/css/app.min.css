@@ -1055,7 +1055,7 @@ body>.row {
     margin-right: 0
 }
 a {
-    color: #006fa6
+    /*color: #006fa6*/
 }
 p {
     font-size: 13px;
@@ -19663,27 +19663,27 @@ a.fc-more:hover {
     cursor: pointer;
 }
 
-.content-upper-header .user-info {
-    width: 230px;
-    height: 208px;
-    position: absolute;
-    right: 25px;
-    top: 71px;
-    z-index: 10000;
-    background-color: white;
-    border-radius: 2px;
-    box-shadow: 0px 3px 3px #cdcdcd;
-}
+/*.content-upper-header .user-info {*/
+    /*width: 230px;*/
+    /*height: 208px;*/
+    /*position: absolute;*/
+    /*right: 25px;*/
+    /*top: 71px;*/
+    /*z-index: 10000;*/
+    /*background-color: white;*/
+    /*border-radius: 2px;*/
+    /*box-shadow: 0px 3px 3px #cdcdcd;*/
+/*}*/
 
-.content-upper-header .user-info::after {
-    content: '';
-    display: block;
-    border: 5px solid transparent;
-    border-bottom: 5px solid white;
-    position: absolute;
-    top: -8px;
-    right: 19px;
-}
+/*.content-upper-header .user-info::after {*/
+    /*content: '';*/
+    /*display: block;*/
+    /*border: 5px solid transparent;*/
+    /*border-bottom: 5px solid white;*/
+    /*position: absolute;*/
+    /*top: -8px;*/
+    /*right: 19px;*/
+/*}*/
 
 .content-upper-header .user-info .big-img {
     width: 60px;
@@ -19709,22 +19709,11 @@ a.fc-more:hover {
     width: 65px;
 }
 
-.content-upper-header .user-info {
-    width: 200px;
-    height: 189px;
-    position: absolute;
-    right: 25px;
-    top: 71px;
-    z-index: 10;
-    background-color: white;
-    border-radius: 2px;
-    box-shadow: 0px 3px 3px #cdcdcd;
-}
 
 .content-upper-header .user-info .data {
     position: absolute;
     right: 20px;
-    top: 15px;
+    /*top: 15px;*/
 }
 
 .content-upper-header .user-info .data ul li {
@@ -19738,7 +19727,7 @@ a.fc-more:hover {
 }
 
 .content-upper-header .user-info .data ul li:first-child {
-    font-size: 11px;
+    font-size: 14px;
 }
 
 .content-upper-header .user-info .stats {

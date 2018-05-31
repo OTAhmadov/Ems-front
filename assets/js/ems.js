@@ -5,7 +5,7 @@
  */
 
 var Ems = {
-     token: '17ee79194c8345f7891b1e08f1b6111c36a383c05713446d97491e2ab2f719a6',
+     // token: 'b2b35e6683f9415e927efe01c998b55c5243f0e59853443e9cdceb2f147c8237',
     lang: 'az',
     appId: 1000008,
     currModule: '',
@@ -339,9 +339,9 @@ var Ems = {
                                 try {
                                     if (data.data) {
                                         var user = data.data;
-                                        $('.profile-data li[data-type="name"]').text(user.person.name + ' ' + user.person.surname + ' ' + user.person.patronymic);
-                                        $('.profile-data li[data-type="role"]').text(user.role.value[Ems.lang]);
-                                        $('.profile-data li[data-type="org"]').text(user.structure.name[Ems.lang]);
+                                        $('.user-notify-content h6[data-type="name"]').text(user.person.name + ' ' + user.person.surname + ' ' + user.person.patronymic);
+                                        $('.user-notify-content p[data-type="role"]').text(user.role.value[Ems.lang]);
+                                        $('.user-notify-content p[data-type="org"]').text(user.structure.name[Ems.lang]);
                                         $('.side-title-block p').text(user.orgName.value[Ems.lang]);
                                         $('.main-img').attr('src', Ems.urls.AdminRest + 'users/' + user.id + '/image?token=' + Ems.token);
                                         $('.side-title-block img').attr('src', Ems.urls.HSIS + 'structures/' + user.orgName.id + '/logo?token=' + Ems.token);

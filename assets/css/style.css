@@ -767,7 +767,7 @@
     background-position: -64px 0px;
 }
 .jstree-default-large .jstree-themeicon {
-    background-position: 67px 0px;*/
+    background-position: 67px 0px;
 }
 .jstree-default-large > .jstree-no-dots .jstree-node,
 .jstree-default-large > .jstree-no-dots .jstree-leaf > .jstree-ocl {
@@ -1225,7 +1225,7 @@
     background-color: rgb(149, 167, 80) !important;
 }*/
 .btn-default {
-    background-color: #95a750;
+    /*background-color: #95a750;*/
     color: #fff;
 }
 .sidebar.menu .sidebar-menu .menu>li>ul li:hover {
