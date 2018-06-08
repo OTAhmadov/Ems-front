@@ -6,8 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="6d9a1be1-3eab-4f0b-aebc-6aabe259104c" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/events.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/events.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/app.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/app.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/update.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/update.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/ems.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/ems.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/partials/refresh_education_plan.html" beforeDir="false" afterPath="$PROJECT_DIR$/partials/refresh_education_plan.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/partials/view_education_plan.html" beforeDir="false" afterPath="$PROJECT_DIR$/partials/view_education_plan.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,24 +22,50 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="98" column="45" lean-forward="true" selection-start-line="98" selection-start-column="45" selection-end-line="98" selection-end-column="45" />
+            <state relative-caret-position="119">
+              <caret line="94" column="47" lean-forward="true" selection-start-line="94" selection-start-column="47" selection-end-line="94" selection-end-column="47" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="update.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="update.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/css/update.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="32079">
-              <caret line="1904" column="16" selection-start-line="1904" selection-start-column="16" selection-end-line="1904" selection-end-column="16" />
+            <state relative-caret-position="322">
+              <caret line="1947" column="39" lean-forward="true" selection-start-line="1947" selection-start-column="39" selection-end-line="1947" selection-end-column="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="refresh_education_plan.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/partials/refresh_education_plan.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="233">
+              <caret line="395" column="30" lean-forward="true" selection-start-line="395" selection-start-column="30" selection-end-line="395" selection-end-column="30" />
               <folding>
-                <element signature="e#39724#39842#0" />
-                <element signature="e#39853#40029#0" />
-                <element signature="e#40102#40162#0" />
+                <element signature="n#div#0;n#form#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#4;n#!!top" />
+                <element signature="n#div#1;n#form#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#4;n#!!top" />
+                <element signature="n#div#2;n#form#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#4;n#!!top" />
+                <element signature="n#style#0;n#span#0;n#th#2;n#tr#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#td#2;n#tr#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="view_education_plan.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/partials/view_education_plan.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="247">
+              <caret line="216" column="34" lean-forward="true" selection-start-line="216" selection-start-column="34" selection-end-line="216" selection-end-column="34" />
+              <folding>
+                <element signature="n#div#0;n#form#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#!!top" />
+                <element signature="n#div#1;n#form#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#!!top" />
+                <element signature="n#div#2;n#form#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#!!top" />
+                <element signature="n#div#0;n#div#2;n#form#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#!!top" />
               </folding>
             </state>
           </provider>
@@ -44,26 +74,15 @@
       <file leaf-file-name="ems.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/js/ems.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="16" column="20" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="events.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/js/events.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.min.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/css/app.min.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="335308">
-              <caret line="19715" column="18" selection-start-line="19715" selection-start-column="18" selection-end-line="19715" selection-end-column="18" />
+            <state relative-caret-position="119">
+              <caret line="11" column="22" lean-forward="true" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
+              <folding>
+                <element signature="n#style#0;n#tr#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#tr#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#tr#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#tr#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#td#2;n#tr#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -72,11 +91,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>eduplan-static-student-table</find>
-      <find>form-group-cover</find>
-      <find>course-static-student-table</find>
-      <find>course-static-student-table-scroll</find>
-      <find>static-student-table</find>
       <find>subject-catalog-subject</find>
       <find>btn-subject-catalog-submit</find>
       <find>operation_1000196</find>
@@ -102,6 +116,11 @@
       <find>cancel</find>
       <find>filters-bloc</find>
       <find>getPro</find>
+      <find>eduplan-subject-topic-form</find>
+      <find>operation_1001314</find>
+      <find>operation_1001314edu-plan-subject-evaluation-modal</find>
+      <find>edu-plan-subject-evaluation-modal</find>
+      <find>edu-plan-subject-evaluation-form</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -120,18 +139,18 @@
         <option value="$PROJECT_DIR$/partials/module_1000099.html" />
         <option value="$PROJECT_DIR$/partials/module_1000097.html" />
         <option value="$PROJECT_DIR$/partials/module_1000098.html" />
-        <option value="$PROJECT_DIR$/partials/refresh_education_plan.html" />
         <option value="$PROJECT_DIR$/partials/add_course.html" />
         <option value="$PROJECT_DIR$/partials/add_eduplan_students.html" />
-        <option value="$PROJECT_DIR$/partials/view_education_plan.html" />
         <option value="$PROJECT_DIR$/assets/css/hsis.css" />
         <option value="$PROJECT_DIR$/assets/js/additionalFunctions.js" />
-        <option value="$PROJECT_DIR$/assets/css/style.css" />
-        <option value="$PROJECT_DIR$/assets/css/app.min.css" />
-        <option value="$PROJECT_DIR$/assets/css/update.css" />
-        <option value="$PROJECT_DIR$/assets/js/ems.js" />
         <option value="$PROJECT_DIR$/assets/js/events.js" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/assets/css/style.css" />
+        <option value="$PROJECT_DIR$/assets/js/ems.js" />
+        <option value="$PROJECT_DIR$/assets/css/app.min.css" />
+        <option value="$PROJECT_DIR$/partials/refresh_education_plan.html" />
+        <option value="$PROJECT_DIR$/partials/view_education_plan.html" />
+        <option value="$PROJECT_DIR$/assets/css/update.css" />
       </list>
     </option>
   </component>
@@ -144,10 +163,10 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="596" />
-    <option name="y" value="219" />
-    <option name="width" value="950" />
+  <component name="ProjectFrameBounds" extendedState="1">
+    <option name="x" value="254" />
+    <option name="y" value="204" />
+    <option name="width" value="1028" />
     <option name="height" value="783" />
   </component>
   <component name="ProjectView">
@@ -161,18 +180,29 @@
           <expand>
             <path>
               <item name="Ems-front" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Ems-front" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Ems-front" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Ems-front" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Ems-front" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="assets" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Ems-front" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Ems-front" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Ems-front" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="assets" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Ems-front" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Ems-front" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Ems-front" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Ems-front" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Ems-front" type="462c0819:PsiDirectoryNode" />
+              <item name="partials" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -271,26 +301,33 @@
       <workItem from="1527849014381" duration="182000" />
       <workItem from="1527850416941" duration="145000" />
       <workItem from="1527850985022" duration="36000" />
+      <workItem from="1528109591623" duration="952000" />
+      <workItem from="1528116923591" duration="719000" />
+      <workItem from="1528118260046" duration="690000" />
+      <workItem from="1528194019231" duration="235000" />
+      <workItem from="1528262899253" duration="3000" />
+      <workItem from="1528443396961" duration="2578000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="266287000" />
+    <option name="totallyTimeSpent" value="271464000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="596" y="219" width="950" height="783" extended-state="0" />
+    <frame x="556" y="128" width="1028" height="783" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.21797752" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" order="10" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.24581006" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23657025" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -299,7 +336,6 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -610,20 +646,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/partials/refresh_education_plan.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="38" column="53" selection-start-line="38" selection-start-column="31" selection-end-line="38" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/partials/view_education_plan.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="35" column="22" selection-start-line="35" selection-start-column="22" selection-end-line="35" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/partials/module_1000095.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2108">
@@ -638,13 +660,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="1228" column="16" lean-forward="true" selection-start-line="1228" selection-start-column="16" selection-end-line="1228" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/css/hsis.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
@@ -652,43 +667,79 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/css/app.min.css">
+    <entry file="file://$PROJECT_DIR$/assets/js/events.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335308">
-          <caret line="19715" column="18" selection-start-line="19715" selection-start-column="18" selection-end-line="19715" selection-end-column="18" />
+        <state relative-caret-position="17">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/css/update.css">
+    <entry file="file://$PROJECT_DIR$/assets/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32079">
-          <caret line="1904" column="16" selection-start-line="1904" selection-start-column="16" selection-end-line="1904" selection-end-column="16" />
-          <folding>
-            <element signature="e#39724#39842#0" />
-            <element signature="e#39853#40029#0" />
-            <element signature="e#40102#40162#0" />
-          </folding>
+        <state relative-caret-position="19601">
+          <caret line="1153" column="24" selection-start-line="1153" selection-start-column="24" selection-end-line="1153" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/app.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="488" selection-start-line="488" selection-end-line="488" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/ems.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="16" column="20" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/events.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        <state relative-caret-position="119">
+          <caret line="11" column="22" lean-forward="true" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
+          <folding>
+            <element signature="n#style#0;n#tr#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#tr#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#tr#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#tr#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#td#2;n#tr#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="98" column="45" lean-forward="true" selection-start-line="98" selection-start-column="45" selection-end-line="98" selection-end-column="45" />
+        <state relative-caret-position="119">
+          <caret line="94" column="47" lean-forward="true" selection-start-line="94" selection-start-column="47" selection-end-line="94" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/partials/refresh_education_plan.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="395" column="30" lean-forward="true" selection-start-line="395" selection-start-column="30" selection-end-line="395" selection-end-column="30" />
+          <folding>
+            <element signature="n#div#0;n#form#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#4;n#!!top" />
+            <element signature="n#div#1;n#form#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#4;n#!!top" />
+            <element signature="n#div#2;n#form#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#4;n#!!top" />
+            <element signature="n#style#0;n#span#0;n#th#2;n#tr#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#td#2;n#tr#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/partials/view_education_plan.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="216" column="34" lean-forward="true" selection-start-line="216" selection-start-column="34" selection-end-line="216" selection-end-column="34" />
+          <folding>
+            <element signature="n#div#0;n#form#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#!!top" />
+            <element signature="n#div#1;n#form#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#!!top" />
+            <element signature="n#div#2;n#form#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#!!top" />
+            <element signature="n#div#0;n#div#2;n#form#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/update.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="1947" column="39" lean-forward="true" selection-start-line="1947" selection-start-column="39" selection-end-line="1947" selection-end-column="39" />
         </state>
       </provider>
     </entry>
