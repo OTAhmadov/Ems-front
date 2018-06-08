@@ -1879,9 +1879,9 @@ li.ems-tab.active>a,li.ems-tab.active>a:hover, li.ems-tab.active>a:focus{
 	width: 80px;
 	height: 80px;
 	overflow: hidden;
-	border-radius: 50%;
-	border: 1px solid grey;
+	/*border: 1px solid grey;*/
 	position: absolute;
+	border-radius: 4px !important;
 	top: 30px;
 	left: 20px;
 }
@@ -1951,5 +1951,8 @@ li.ems-tab.active>a,li.ems-tab.active>a:hover, li.ems-tab.active>a:focus{
 }
 .subject-name{
 	font-size: 14px;
+}
+.left-fixed-menu{
+	top: 10px;
 }
 
