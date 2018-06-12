@@ -34,12 +34,12 @@
 
 
 header.header-upd{
-	height: 40px;
+	height: 50px;
 	background-color: #16A085;
 }
 .logo-upd{
 	display: inline-block;
-	padding: 10px 0 0 3px;
+	padding: 16px 0 0 3px;
 }
 .logo-upd img{
 	height: 21px;
@@ -57,7 +57,7 @@ header.header-upd{
   width: 30px;
   height: 30px;
   border: solid 4px #ffffff;
-  margin: 5px 0 0 0;
+  margin: 11px 0 0 0;
   float: left;
   /*margin-top: 17px!important;*/
 }
@@ -112,7 +112,7 @@ main.main-upd{
 	/*height: calc(100vh - 70px);*/
 	background-color: #ffffff;
 	height: 100vh;
-	border: solid 1px #ece9fa;
+	/*border: solid 1px #ece9fa;*/
 }
 .main-content-upd{
 	height: calc(100vh - 70px);
@@ -130,7 +130,7 @@ main.main-upd{
 .app-list{
 	float: right;
 	position: static;
-	margin-right: 10px;
+	/*margin-right: 10px;*/
 
 }
 .app-con li a{
@@ -147,7 +147,7 @@ main.main-upd{
 	position: absolute;
 	width: 100%;
 	left: 0;
-	bottom: -12px;
+	bottom: -17px;
 	z-index: 2;
 	height: 3px;
 	background: #fff;
@@ -177,7 +177,7 @@ main.main-upd{
   /*margin: 0;*/
 	font: 15px/17px 'HelveticaNeue',sans-serif;
 	/* text-align: left; */
-	color: #828282;
+	color: #000;
 	vertical-align: middle;
 	/* display: inline-block; */
 	/* max-width: 153px; */
@@ -213,7 +213,7 @@ main.main-upd{
 	height: 100%;
 	font: 14px/50px 'HelveticaNeue', sans-serif;
 	text-align: left;
-	color: #333333;
+	color: #000;
 	padding-left: 36px;
 }
 .module-list li a:hover, .module-list li a:focus{
@@ -410,7 +410,7 @@ main.main-upd{
 	display: inline-block;
 	width: 100%;
 	margin-bottom: 7px;
-	padding: 20px 30px 18px;
+	padding: 16px 30px 16px;
 }
 .con-head-left{
 	float: left;
@@ -419,7 +419,7 @@ main.main-upd{
 	float: right;
 }
 .hed-title{
-	font: 22px/26px 'HelveticaNeue',sans-serif;
+	font: 22px/28px 'HelveticaNeue',sans-serif;
 	text-align: left;
 	color: #333333;
 	display: inline-block;
@@ -438,12 +438,12 @@ main.main-upd{
 .dropdown-func{
 	float: none;
 	position: relative;
-	top: 0;
+	/*top: 0;*/
 	display: inline-block;
 	
 }
 .reg.dropdown-toggle{
-	height: 32px;
+	 height: 33px;
 	 border-radius: 24px;
 	 border: solid 1px #16A085 !important;
 	 padding: 0 12px 0 32px;
@@ -453,7 +453,7 @@ main.main-upd{
 	 background: none !important;
 	 width: auto;
 	 margin-left: 30px;
-	 margin-bottom: 6px;
+	 /*margin-bottom: 6px;*/
 }
 .reg.dropdown-toggle:after {
     content: '';
@@ -487,15 +487,16 @@ main.main-upd{
 	height: 17.5px;
 }
 .prepend-icon input{
-	/*width: 170px;*/
-	height: 20px;
+	width: 100%;
+	height: 33px;
+	vertical-align: middle;
 	border-radius: 100px;
 	background-color: #f3f5f9;
 	padding: 0 40px 0 16px;
 	border: none;
 	font: 300 14px/14px 'HelveticaNeue',sans-serif;
 	text-align: left;
-	color: #6b7897;
+	color: #000;
 	outline: none !important;
 }
 /*.prepend-icon:before{*/
@@ -610,14 +611,14 @@ main.main-upd{
 	font: 500 12px/15px 'HelveticaNeue',sans-serif;
 	letter-spacing: -0.1px;
 	text-align: left;
-	color: #6b7897 !important;
+	color: #000 !important;
 	padding: 0 5px !important;
 }
 .table-celled>tbody>tr>td{
 	font: 12px/24px 'HelveticaNeue',sans-serif;
 	text-align: left;
-	color: #6b7897;
-	padding: 0 4px !important;
+	color: #000;
+	padding: 0 8px !important;
 }
 td .operations{
 	background: none !important;
@@ -1471,8 +1472,8 @@ table.table tbody tr.active-tr td{
 .app-con li{
 	/*padding: 0 10px;*/
 	/*width: 109px;*/
-	height: 40px;
-	line-height: 40px;
+	height: 50px;
+	line-height: 50px;
 }
 #subject-catalog-table{
 	width: 100% !important;
@@ -1507,8 +1508,8 @@ button.org-list{
 .hide-menu{
 	display: none;
 	float: right;
-	width: 34px;
-	margin-top: 20px;
+	width: 24px;
+	margin-top: 18px;
 }
 .hide-menu i{
 	color: #fff;
@@ -1531,17 +1532,18 @@ button.org-list{
 		float: none;
 		padding: 9px 15px;
 		text-align: center;
+		margin-right: 0;
 		margin-top: 10px;
 		width: 200px;
 	}
 	div.app-list.less-menu ul.app-con{
 		background: #16a085;
 		position: fixed;
-		right: 65px;
+		right: 45px;
 		z-index: 999;
 		display: flex;
 		flex-direction: column;
-		top: 75px;
+		top: 55px;
 		height: auto;
 	}
 	div.app-list.less-menu ul.app-con li:last-child{
@@ -1841,7 +1843,7 @@ ul.first-calibrated:nth-of-type(1){
 	right: -500px;
 	width: 400px;
 	height: 100vh;
-	top: 40px;
+	top: 50px;
 	z-index: 999;
 	visibility: hidden;
 	opacity: 0;
@@ -1938,6 +1940,7 @@ li.ems-tab.active>a,li.ems-tab.active>a:hover, li.ems-tab.active>a:focus{
 	/*display: block;*/
 	/*top: 25px;*/
 	/*height: 50px;*/
+
 	/*left: 32px;*/
 /*}*/
 
@@ -1953,6 +1956,6 @@ li.ems-tab.active>a,li.ems-tab.active>a:hover, li.ems-tab.active>a:focus{
 	font-size: 14px;
 }
 .left-fixed-menu{
-	top: 10px;
+	top: 0;
 }
 

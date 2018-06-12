@@ -9730,7 +9730,7 @@ fieldset[disabled] .btn-white:hover {
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none;
-    background-color: #fff;
+    background-color: #f3f5f9;
     border-color: #d1d1d1
 }
 .form-control[class*="bg-"]::-webkit-input-placeholder {
@@ -19946,7 +19946,7 @@ tfoot {
 
 .dropdown-func {
     position: absolute;
-    top: -5px;
+    /*top: -5px;*/
     right: 0;
     float: right;
 }

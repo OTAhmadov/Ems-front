@@ -507,7 +507,8 @@ and open the template in the editor.
     $(function () {
         Ems.i18n(Ems.lang);
 
-        $('body').on('click', '.close-add-course', function(){
+        $('body').on('click', '.close-add-course', function(e){
+            e.preventDefault();
             $('.qrup-area').css('right', '-100%');
             $('body').find('div.left-fixed-menu + div.content-part').css('width','calc(100% - 280px');
             return false
@@ -515,7 +516,8 @@ and open the template in the editor.
 
         $('body').find('.static-student-table').slimScroll();
 
-        $('body').on('click', '.view-mode .close-add-course', function(){
+        $('body').on('click', '.view-mode .close-add-course', function(e){
+            e.preventDefault();
             $('.module-block[data-id="' + Ems.currModule + '"]').click();
                 setTimeout(function(){
                     $('.sdie-c').fadeIn(1);
