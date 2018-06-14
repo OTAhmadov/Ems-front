@@ -116,7 +116,7 @@ main.main-upd{
 }
 .main-content-upd{
 	height: calc(100vh - 70px);
-	padding-top: 10px;
+	padding-top: 9px;
 }
 .col-sm-3 + .slimScrollDiv, .content-part{
 	height: calc(100vh - 70px) !important;
@@ -409,7 +409,7 @@ main.main-upd{
 	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.08);
 	display: inline-block;
 	width: 100%;
-	margin-bottom: 7px;
+	margin-bottom: 5px;
 	padding: 16px 30px 16px;
 }
 .con-head-left{
@@ -518,7 +518,7 @@ main.main-upd{
 	padding: 20px 5px;
 	width: 100%;
 	display: inline-block;
-	margin-bottom: 10px;
+	margin-bottom: 5px;
 }
 .filters-block .btn-group{
 	display: block;
@@ -563,7 +563,10 @@ main.main-upd{
 	min-width: 140px;
 	margin-bottom: 0;
 }
-.filters-block .btn-group button, .filters-block .btn-group select, .filters-block .btn-group .select2-container--default .select2-selection--multiple, .filters-block .select2-container .select2-selection--single .select2-selection__rendered{
+.filters-block .btn-group button,
+.filters-block .btn-group select,
+.filters-block .btn-group .select2-container--default .select2-selection--multiple,
+.filters-block .select2-container .select2-selection--single .select2-selection__rendered{
 	width: 100% !important;
 	height: 32px;
 	border-radius: 2px;
@@ -572,7 +575,7 @@ main.main-upd{
 	font: 300 14px/24px 'HelveticaNeue',sans-serif;
 	text-align: left;
 	color: #333333;
-	padding: 0 0 0 8px;
+	padding: 4px 0 0 8px;
 }
 .btn i.append, .btn i.fa-angle-down {
      margin-left: 0;
@@ -1865,8 +1868,9 @@ ul.first-calibrated:nth-of-type(1){
 	margin: 0 !important;
 }
 .ems-tab a{
-	padding: 15px 30px !important;
+	padding: 13px 30px !important;
 	font-size: 15px;
+	height: 50px;
 	font-weight: 300;
 	text-transform: uppercase;
 	text-align: center;

@@ -5,7 +5,7 @@
  */
 
 var Ems = {
-    token: '5cba30caefbe43bcad9ab5fdfdf451b30457f15100084090871d04f7b05814bc',
+    token: '307c0164b6534db299c3b262f879f27db29511b07876420da4d7ee81caa6bd36',
     lang: 'az',
     appId: 1000008,
     currModule: '',
