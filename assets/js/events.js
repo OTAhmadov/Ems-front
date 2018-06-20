@@ -1834,7 +1834,7 @@ setTimeout(function () {
         var status = $('body').attr('data-status-id');
         if(status == 1000340){
             // $('body').find('.add-student').css('display','none');
-            $('body').find('.remove-course-student').css('display','none');
+            // $('body').find('.remove-course-student').css('display','none');
         }
     });
     $('#main-div').on('click', '#operation_1000199', function () {

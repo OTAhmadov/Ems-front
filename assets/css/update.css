@@ -116,7 +116,7 @@ main.main-upd{
 }
 .main-content-upd{
 	height: calc(100vh - 70px);
-	padding-top: 9px;
+	padding-top: 7px;
 }
 .col-sm-3 + .slimScrollDiv, .content-part{
 	height: calc(100vh - 70px) !important;
@@ -124,7 +124,8 @@ main.main-upd{
 .content-part{
 	width: calc(100% - 280px) ;
 	padding-left: 0;
-	padding-right: 10px;
+	padding-right: 7px;
+
 	/*!important;*/
 }
 .app-list{
@@ -409,7 +410,7 @@ main.main-upd{
 	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.08);
 	display: inline-block;
 	width: 100%;
-	margin-bottom: 5px;
+	margin-bottom: 3px;
 	padding: 16px 30px 16px;
 }
 .con-head-left{
@@ -518,7 +519,7 @@ main.main-upd{
 	padding: 20px 5px;
 	width: 100%;
 	display: inline-block;
-	margin-bottom: 5px;
+	margin-bottom: 7px;
 }
 .filters-block .btn-group{
 	display: block;
@@ -1823,8 +1824,8 @@ ul.first-calibrated:nth-of-type(1){
 	margin-right: 3px;
 }
 .left-fixed-menu{
-	padding-left: 10px;
-	padding-right: 10px;
+	padding-left: 7px;
+	padding-right: 7px;
 }
 /*.app-list{*/
 	/*display: block;*/
@@ -1949,7 +1950,7 @@ li.ems-tab.active>a,li.ems-tab.active>a:hover, li.ems-tab.active>a:focus{
 /*}*/
 
 .con-head-left{
-	margin-top: 6px;
+	margin-top: 3px;
 }
 .table-scroll{
 	-webkit-border-radius: 6px 6px 0 0;
@@ -1961,5 +1962,8 @@ li.ems-tab.active>a,li.ems-tab.active>a:hover, li.ems-tab.active>a:focus{
 }
 .left-fixed-menu{
 	top: 0;
+}
+.p-left-7{
+	padding-left: 7px;
 }
 
