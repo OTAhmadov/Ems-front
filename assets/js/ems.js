@@ -5,7 +5,7 @@
  */
 
 var Ems = {
-    // token: '523c0b7e96334e229344d9bae528eccd26928b20a16640cbb582acd6df69cb80',
+    // token: '25ba1d2afd254b44ab6d416de5b4e4fb1d8f4bad5467464298af7e11fad544b1',
     lang: 'az',
     appId: 1000008,
     currModule: '',
@@ -22,22 +22,23 @@ var Ems = {
     host: window.location.host,
     stompClient:0,
     personId:'',
+    sortedArray:[],
             tempData: {
                 form: ''
             },
     urls: {
      // ROS: "http://localhost:8080/ROS/",
-        ROS: "http://192.168.1.78:8082/ROS/",
+        ROS: "http://192.168.1.8:8082/ROS/",
        // AdminRest: 'http://localhost:8080/AdministrationRest/',
-          AdminRest: 'http://192.168.1.78:8082/AdministrationRest/',
+          AdminRest: 'http://192.168.1.8:8082/AdministrationRest/',
    // HSIS: "http://localhost:8080/UnibookHsisRest/",
-        HSIS: "http://192.168.1.78:8082/UnibookHsisRest/",
+        HSIS: "http://192.168.1.8:8082/UnibookHsisRest/",
        // REPORT: 'http://localhost:8080/ReportingRest/',
-        REPORT: 'http://192.168.1.78:8082/ReportingRest/',
+        REPORT: 'http://192.168.1.8:8082/ReportingRest/',
         // EMS: 'http://localhost:8080/UnibookEMS/',
-        EMS: 'http://192.168.1.78:8082/UnibookEMS/',
-        COMMUNICATION: 'http://192.168.1.78:8082/CommunicationRest/',
-        NOTIFICATION: 'http://192.168.1.78:8082/NotificationSystem/greeting.html?token=',
+        EMS: 'http://192.168.1.8:8082/UnibookEMS/',
+        COMMUNICATION: 'http://192.168.1.8:8082/CommunicationRest/',
+        NOTIFICATION: 'http://192.168.1.8:8082/NotificationSystem/greeting.html?token=',
         SOCKET: 'http://localhost:8080/SocketRest'
 
     },
@@ -3489,14 +3490,16 @@ var Ems = {
                 $.each(data, function (i, v) {
                     if(v.id == 1000001)
                         html += '<li data-toggle="tooltip" data-placement="'+position+'" title = "' + v.name[Ems.lang] + '">' +
-                                    '<a data-id="' + v.id + '"  href="' + v.url + '?token=' + Ems.token + '">' + v.shortName[Ems.lang] + '</a>' + 
+                                    '<a data-id="' + v.id + '"  href="' + v.url + '?token=' + Ems.token + '">' + '<img class="subAppIcon" src="assets/img/Icons/'+v.iconPath+'.svg">' + '</a>' +
                                 '</li>';
                 });
                 Ems.Proxy.loadSubApplications(function(data) {
                     if(data && data.data) {
                         $.each(data.data, function (i, v) {
                             html += '<li data-toggle="tooltip" data-placement="'+position+'" title = "' + v.name[Ems.lang] + '">' +
-                                        '<a data-id="' + v.id + '"  href="' + v.url + '?token=' + Ems.token + '">' + v.shortName[Ems.lang] + '</a>' + 
+                                        '<a data-id="' + v.id + '"  href="' + v.url + '?token=' + Ems.token + '">' +
+                                '<img class="subAppIcon" src="assets/img/Icons/'+v.iconPath+'.svg">'
+                                + '</a>' +
                                     '</li>';
                         })
                     }
@@ -3505,13 +3508,13 @@ var Ems = {
                     $('.app-con a[data-id="' + Ems.appId + '"]').parent('li').addClass('active');
                     $('[data-toggle="tooltip"]').tooltip();
 
-                    var moduleListItems = $('body').find('.app-con li');
+                    /*var moduleListItems = $('body').find('.app-con li');
                     console.log(moduleListItems)
                     if(moduleListItems.length>5){
                         $('body').find('div.app-list, .hide-menu').addClass('less-menu')
                     }else{
                         $('body').find('div.app-list, .hide-menu').removeClass('less-menu')
-                    }
+                    }*/
 
                 })
                 

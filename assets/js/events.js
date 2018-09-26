@@ -1682,7 +1682,7 @@ setTimeout(function () {
                 $('#main-div .btn-course-submit').attr('data-type', 'add')
                 Ems.Proxy.getEvaluationTypes(function (data) {
                     if (data && data.data) {
-                        var html = ''
+                        var html = '';
                         $.each(data.data, function (i, v) {
                             html += '<option value="' + v.nameType + '">' + v.name + '</option>'
                         });
@@ -1767,7 +1767,7 @@ setTimeout(function () {
                 teachers: [],
                 students: [],
                 token: Ems.token
-            }
+            };
 
 //            $('#main-div #evaluation-type-table tbody tr').each(function () {
 //                if ($(this).find('input').is(':checked')) {
@@ -1837,7 +1837,9 @@ setTimeout(function () {
             // $('body').find('.remove-course-student').css('display','none');
         }
     });
-    $('#main-div').on('click', '#operation_1000199', function () {
+    $('#main-div').on('click', '#operation_1000199', function (e) {
+
+        e.preventDefault();
                 var statusId = $('body').find('#course-table tr.active-tr').attr('data-status');
         $('body').attr('data-status-id', statusId);
         try {
@@ -2073,7 +2075,7 @@ setTimeout(function () {
                                     '<td><span class = "fa fa-remove remove-course-student" data-id = "' + v.id + '"></span></td>' +
                                     '</tr>'
                             $('#main-div #course-student-table tbody').append(studentTable)
-                        })
+                        });
                         
                         
                         Ems.Proxy.getCourseGroup(id, function(data) {
@@ -2928,41 +2930,55 @@ setTimeout(function () {
             var html='';
             var count = 0;
             Ems.Proxy.getCourseGroupStudents(id, function(data) {
-               if(data && data.data) {
-                   $.each(data.data, function(i, v){
+
+                if(data && data.data) {
+
+
+                    $.each(data.data, function(i, v){
                        html += '<tr>'+
                            '<td>'+(++count)+'</td>'+
                            '<td>'+v.fullname+'</td>'+
                            '<td><input name = "students" value="'+v.id+'" class="group-student-check" style="opacity: 1; position: sticky;" type="checkbox"></td>'+
                            '</tr>'
                    })
-                   
+
                }
-               
+
                Ems.Proxy.getCourseGroupStudentsById(groupId, function(data) {
-                    if(data && data.data) {
+
+                   var nameList = [];
+
+                    if(data.data) {
                         $.each(data.data, function(i, v){
+                            nameList.push(v.fullname);
                             html += '<tr>'+
                                 '<td>'+(++count)+'</td>'+
-                                '<td>'+v.fullname+'</td>'+
+                                '<td data-sortname="'+i+'"></td>'+
                                 '<td><span class="fa fa-remove remove-course-group-student" data-participant-id="'+v.id+'" data-id = "'+v.courseGroupStudentId+'"></span></td>'+
                                 '</tr>'
-                        })
-
+                        });
+                        sortedArray = nameList.sort(function (a, b) {
+                            if(a < b){
+                                return 1;
+                            }else if(a > b){
+                                return -1;
+                            }
+                        });
+                        $('body #course-group-student-table tbody').html(html);
+                        $('body td[data-sortname]').each(function(i){
+                            $(this).html(sortedArray[i]);
+                        });
                     }
-                    
-                    $('body #course-group-student-table tbody').html(html);
+
                     $('body .btn-course-group-student-add').attr('data-id', groupId);
                     
                     $('body .course-group-student-modal').modal("show");
-                    
+
                  });
-                 
-                 
-               
+
             });
-            
-            
+
+
             
         } catch (err) {
             console.error(err);
@@ -3258,7 +3274,7 @@ setTimeout(function () {
         }); 
         
     })
-    $(window).resize(function () {
+    /*$(window).resize(function () {
         var width = window.innerWidth;
         if(width > 1500) {
             $('.app-list').show();
@@ -3277,7 +3293,7 @@ setTimeout(function () {
                 $('.app-list').hide();
             });
         }
-    });
+    });*/
 
     $(".main-img").on("click", function () {
         $('.user-info').toggleClass("helloWorld");
