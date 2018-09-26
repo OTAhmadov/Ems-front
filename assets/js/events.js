@@ -1128,6 +1128,7 @@ setTimeout(function () {
                 mHours: $('#main-div .eduplan-subject-mhour').val(),
                 sHours: $('#main-div .eduplan-subject-shour').val(),
                 lHours: $('#main-div .eduplan-subject-lhour').val(),
+                fmHours: $('#main-div .eduplan-subject-fmhour').val(),
                 credit: $('#main-div .eduplan-subject-credit').val(),
                 eduPlanId: eduPlanId,
                 weekCharge: $('#main-div .eduplan-subject-week-charge').val(),
@@ -1296,6 +1297,7 @@ setTimeout(function () {
                     $('#main-div .eduplan-subject-mhour').val(data.data.mhours)
                     $('#main-div .eduplan-subject-shour').val(data.data.shours)
                     $('#main-div .eduplan-subject-lhour').val(data.data.lhours)
+                    $('#main-div .eduplan-subject-fmhour').val(data.data.fmhours)
                     $('#main-div .eduplan-subject-inhour').val(data.data.inHours)
                     $('#main-div .eduplan-subject-outhour').val(data.data.outHours)
                     $('#main-div .eduplan-subject-credit').val(data.data.credit)

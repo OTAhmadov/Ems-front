@@ -5,7 +5,7 @@
  */
 
 var Ems = {
-    // token: '25ba1d2afd254b44ab6d416de5b4e4fb1d8f4bad5467464298af7e11fad544b1',
+     token: 'fe6d719ec3934f8e9ffabb7012e9ab50345ef495f0454536a492e08d637bf7e9',
     lang: 'az',
     appId: 1000008,
     currModule: '',
@@ -34,12 +34,21 @@ var Ems = {
    // HSIS: "http://localhost:8080/UnibookHsisRest/",
         HSIS: "http://192.168.1.8:8082/UnibookHsisRest/",
        // REPORT: 'http://localhost:8080/ReportingRest/',
+<<<<<<< .mine
         REPORT: 'http://192.168.1.8:8082/ReportingRest/',
         // EMS: 'http://localhost:8080/UnibookEMS/',
         EMS: 'http://192.168.1.8:8082/UnibookEMS/',
         COMMUNICATION: 'http://192.168.1.8:8082/CommunicationRest/',
         NOTIFICATION: 'http://192.168.1.8:8082/NotificationSystem/greeting.html?token=',
         SOCKET: 'http://localhost:8080/SocketRest'
+=======
+        REPORT: 'http://192.168.1.8:8082/ReportingRest/',
+         EMS: 'http://localhost:8080/UnibookEMS/',
+//        EMS: 'http://192.168.1.8:8082/UnibookEMS/',
+        COMMUNICATION: 'http://192.168.1.8:8082/CommunicationRest/',
+        NOTIFICATION: 'http://192.168.1.8:8082/NotificationSystem/greeting.html?token=',
+//        SOCKET: 'http://localhost:8080/SocketRest'
+>>>>>>> .theirs
 
     },
     statusCodes: {
@@ -3899,13 +3908,14 @@ var Ems = {
                                     '<td>' + v.mhours + '</td>' +
                                     '<td>' + v.shours + '</td>' +
                                     '<td>' + v.lhours + '</td>' +
+                                    '<td>' + v.fmHours + '</td>' +
                                     '<td></td>' +
                                     '<td></td>' +
                                     '<td></td>' +
                                     '<td></td>' +
                                     '</tr>';
                         else
-                            html += '<tr style="background-color: gainsboro;color: red;font-size: 15px;"><td colspan="14">' + v.name + '</td></tr>'
+                            html += '<tr style="background-color: gainsboro;color: red;font-size: 15px;"><td colspan="15">' + v.name + '</td></tr>'
                     } else {
                         html += '<tr data-id="' + v.id + '">' +
                                 '<td>' + (++count) + '</td>' +
@@ -3918,6 +3928,7 @@ var Ems = {
                                 '<td>' + v.mhours + '</td>' +
                                 '<td>' + v.shours + '</td>' +
                                 '<td>' + v.lhours + '</td>' +
+                                '<td>' + v.fmHours + '</td>' +
                                 '<td>' + (v.weekCharge && v.weekCharge > 0 ? v.weekCharge : '') + '</td>' +
                                 '<td>' + (v.semester ? v.semester.value[Ems.lang] : '') + '</td>' +
                                 '<td>' + (v.parentId && v.parentId.dicName.value.az ? v.parentId.dicName.value[Ems.lang] : '') + '</td>' +
@@ -3947,13 +3958,14 @@ var Ems = {
                                     '<td>' + v.mhours + '</td>' +
                                     '<td>' + v.shours + '</td>' +
                                     '<td>' + v.lhours + '</td>' +
+                                    '<td>' + v.fmHours + '</td>' +
                                     '<td></td>' +
                                     '<td></td>' +
                                     '<td></td>' +
                                     '<td></td>' +
                                     '</tr>';
                         else
-                            html += '<tr style="background-color: gainsboro;color: red;font-size: 15px;"><td colspan="14">' + v.name + '</td></tr>'
+                            html += '<tr style="background-color: gainsboro;color: red;font-size: 15px;"><td colspan="15">' + v.name + '</td></tr>'
                     } else {
                         html += '<tr data-id="' + v.id + '">' +
                                 '<td>' + (++count) + '</td>' +
@@ -3966,6 +3978,7 @@ var Ems = {
                                 '<td>' + v.mhours + '</td>' +
                                 '<td>' + v.shours + '</td>' +
                                 '<td>' + v.lhours + '</td>' +
+                                '<td>' + v.fmHours + '</td>' +
                                 '<td>' + (v.weekCharge && v.weekCharge > 0 ? v.weekCharge : '') + '</td>' +
                                 '<td>' + (v.semester ? v.semester.value[Ems.lang] : '') + '</td>' +
                                 '<td>' + (v.parentId && v.parentId.dicName.value.az ? v.parentId.dicName.value[Ems.lang] : '') + '</td>' +

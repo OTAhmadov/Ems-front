@@ -167,7 +167,7 @@ and open the template in the editor.
                                     </div>
                                 </div>
 
-                                <div class="col-md-4">
+                                <div class="col-md-3">
                                     <div class="form-group">
                                         <label for="add-serial">Mühazirə</label>
                                         <div class=" ">
@@ -176,7 +176,7 @@ and open the template in the editor.
                                     </div>
                                 </div>
 
-                                <div class="col-md-4">
+                                <div class="col-md-3">
                                     <div class="form-group">
                                         <label for="add-serial">Seminar</label>
                                         <div class=" ">
@@ -185,11 +185,20 @@ and open the template in the editor.
                                     </div>
                                 </div>
 
-                                <div class="col-md-4">
+                                <div class="col-md-3">
                                     <div class="form-group">
                                         <label for="add-serial">Laboratoriya</label>
                                         <div class=" ">
                                             <input disabled class="form-control course-fake-lhours no-padding" />
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="add-serial">Fərdi məşğələ</label>
+                                        <div class=" ">
+                                            <input disabled class="form-control course-fake-fmhours no-padding" />
                                         </div>
                                     </div>
                                 </div>
@@ -594,7 +603,7 @@ and open the template in the editor.
                         var html = '<option value="0">' + Ems.dictionary[Ems.lang]["select"] + '</option>';
 
                         $.each(data.data, function (i, v) {
-                            html += '<option value="' + v.id + '" data-m="' + v.mhours + '" data-s="' + v.shours + '" data-l="' + v.lhours + '">' + v.dicName.value[Ems.lang] + '(' + v.credit + ' kr.) - ' + v.code + '---' + (v.chosenStatus == 1 ? 'Seçmə fənn' : '') + '</option>';
+                            html += '<option value="' + v.id + '" data-m="' + v.mhours + '" data-fm="' + v.fmHours + '" data-s="' + v.shours + '" data-l="' + v.lhours + '">' + v.dicName.value[Ems.lang] + '(' + v.credit + ' kr.) - ' + v.code + '---' + (v.chosenStatus == 1 ? 'Seçmə fənn' : '') + '</option>';
                         });
                         $('.course-subject').html(html);
 
@@ -681,10 +690,12 @@ and open the template in the editor.
             var mhours = $(this).find('option:selected').attr('data-m');
             var shours = $(this).find('option:selected').attr('data-s');
             var lhours = $(this).find('option:selected').attr('data-l');
+            var fmhours = $(this).find('option:selected').attr('data-fm');
             var hourType = $('input[name=hourType]:checked').val()
             $('.course-fake-mhours').val(mhours);
             $('.course-fake-shours').val(shours);
             $('.course-fake-lhours').val(lhours);
+            $('.course-fake-fmhours').val(fmhours);
             
             
             Ems.Proxy.getEduplanListBySubjectId(id, hourType, function(data) {
@@ -722,6 +733,8 @@ and open the template in the editor.
                                 $('#course-static-student-table tbody').html(html);
                             }
                         })
+                        
+                        
                     }
                 });
                 
@@ -744,6 +757,16 @@ and open the template in the editor.
                         $('#main-div #evaluation-type-table tbody').html(htmlEva);
                     }
                 })
+                
+                Ems.Proxy.getTeacherListBySubjectId(id, function (data) {
+                if (data && data.data) {
+                    var html = '<option value="0">' + Ems.dictionary[Ems.lang]["select"] + '</option>';
+                    $.each(data.data, function (i, v) {
+                        html += '<option value="' + v.id + '">' + v.fullname + '</option>';
+                    });
+                    $('.course-teacher').html(html);
+                }
+            })
                 
             });
         
@@ -769,18 +792,18 @@ and open the template in the editor.
                 }
             })
         })
-        $('.course-subject').on('change', function () {
-            var id = $(this).val();
-            Ems.Proxy.getTeacherListBySubjectId(id, function (data) {
-                if (data && data.data) {
-                    var html = '<option value="0">' + Ems.dictionary[Ems.lang]["select"] + '</option>';
-                    $.each(data.data, function (i, v) {
-                        html += '<option value="' + v.id + '">' + v.fullname + '</option>';
-                    });
-                    $('.course-teacher').html(html);
-                }
-            })
-        })
+//        $('.course-subject').on('change', function () {
+//            var id = $(this).val();
+//            Ems.Proxy.getTeacherListBySubjectId(id, function (data) {
+//                if (data && data.data) {
+//                    var html = '<option value="0">' + Ems.dictionary[Ems.lang]["select"] + '</option>';
+//                    $.each(data.data, function (i, v) {
+//                        html += '<option value="' + v.id + '">' + v.fullname + '</option>';
+//                    });
+//                    $('.course-teacher').html(html);
+//                }
+//            })
+//        })
 
         $('#main-div').on('click', '.add-teacher', function () {
             $('.teacher-modal').modal('show');

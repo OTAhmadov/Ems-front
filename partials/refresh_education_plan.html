@@ -50,6 +50,7 @@ and open the template in the editor.
                             <th>Mühazirə</th>
                             <th>Seminar</th>
                             <th>Laboratoriya</th>
+                            <th>Fərdi məşğələ</th>
                             <th>Həftəlik dərs yükü</th>
                             <th>Semestr</th>
                             <th>Asılı fənlər</th>
@@ -193,7 +194,7 @@ and open the template in the editor.
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-4">
+                        <div class="col-md-3">
                             <div class="form-group">
                                 <label for="add-serial">Mühazirə</label>
                                 <div class="">
@@ -201,7 +202,7 @@ and open the template in the editor.
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-3">
                             <div class="form-group">
                                 <label for="add-serial">Seminar</label>
                                 <div class="">
@@ -209,11 +210,19 @@ and open the template in the editor.
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-3">
                             <div class="form-group">
                                 <label for="add-serial">Laboratoriya</label>
                                 <div class="">
                                     <input class="form-control eduplan-subject-lhour no-padding" name="lHours"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="add-serial">Fərdi məşğələ</label>
+                                <div class="">
+                                    <input class="form-control eduplan-subject-fmhour no-padding" name="fmHours"/>
                                 </div>
                             </div>
                         </div>
@@ -410,7 +419,7 @@ and open the template in the editor.
     </div>
 </div>
 
-<div class="modal edu-plan-topic-modal">
+<div class="modal edu-plan-topic-modal">    
     <div class="modal-dialog document">
         <div class="modal-content">
             <div class="modal-header">
@@ -641,13 +650,14 @@ and open the template in the editor.
         })
 
 
-        $('#main-div').on('keyup', '.eduplan-subject-mhour, .eduplan-subject-shour, .eduplan-subject-lhour', function () {
+        $('#main-div').on('keyup', '.eduplan-subject-mhour, .eduplan-subject-shour, .eduplan-subject-lhour, .eduplan-subject-fmhour', function () {
             var obj = $(this);
             var mhours = +$('.eduplan-subject-mhour').val();
             var shours = +$('.eduplan-subject-shour').val();
             var lhours = +$('.eduplan-subject-lhour').val();
+            var fmhours = +$('.eduplan-subject-fmhour').val();
             var hours = +$('.eduplan-subject-hour').val();
-            var totalhours = mhours + shours + lhours;
+            var totalhours = mhours + shours + lhours + fmhours;
             if (totalhours > $('.eduplan-subject-hour').val()) {
                 obj.val(
                     function (index, value) {
