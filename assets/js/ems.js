@@ -34,21 +34,16 @@ var Ems = {
    // HSIS: "http://localhost:8080/UnibookHsisRest/",
         HSIS: "http://192.168.1.8:8082/UnibookHsisRest/",
        // REPORT: 'http://localhost:8080/ReportingRest/',
-<<<<<<< .mine
         REPORT: 'http://192.168.1.8:8082/ReportingRest/',
         // EMS: 'http://localhost:8080/UnibookEMS/',
         EMS: 'http://192.168.1.8:8082/UnibookEMS/',
         COMMUNICATION: 'http://192.168.1.8:8082/CommunicationRest/',
         NOTIFICATION: 'http://192.168.1.8:8082/NotificationSystem/greeting.html?token=',
-        SOCKET: 'http://localhost:8080/SocketRest'
-=======
+        SOCKET: 'http://localhost:8080/SocketRest',
         REPORT: 'http://192.168.1.8:8082/ReportingRest/',
          EMS: 'http://localhost:8080/UnibookEMS/',
-//        EMS: 'http://192.168.1.8:8082/UnibookEMS/',
         COMMUNICATION: 'http://192.168.1.8:8082/CommunicationRest/',
         NOTIFICATION: 'http://192.168.1.8:8082/NotificationSystem/greeting.html?token=',
-//        SOCKET: 'http://localhost:8080/SocketRest'
->>>>>>> .theirs
 
     },
     statusCodes: {
