@@ -142,7 +142,6 @@
         Ems.Proxy.loadOperations(Ems.currModule, function (operations) {
             $('#buttons_div').find('ul').html(Ems.Service.parseOperations(operations, 1));
             Ems.Proxy.getCourseList();
-            
         });
         
         Ems.Proxy.loadDictionariesByTypeId(1000017, 0, function (eduType) {
@@ -350,10 +349,10 @@
             var code = $(this).val();
             $('body .course-search-form input[name="code"]').val(code);
             $('.btn-load-more').removeAttr('data-page');
-            var params = $('body .course-search-form').serialize()
+            var params = $('body .course-search-form').serialize();
             Ems.Proxy.getCourseList('', params);
             $('.btn-load-more').removeAttr('data-page');
-        })
+        });
         
         $('body').on('click', '#semestr-filter a, #edu-lang-filter a, #status-filter a, #edu-type-filter a', function (e) {
             var text = $(this).text();

@@ -527,12 +527,10 @@ and open the template in the editor.
 
         $('body').on('click', '.view-mode .close-add-course', function(e){
             e.preventDefault();
-            $('.module-block[data-id="' + Ems.currModule + '"]').click();
-                setTimeout(function(){
-                    $('.sdie-c').fadeIn(1);
-                    $('.col-sm-3 + .slimScrollDiv').css('width', '85%');
-                    $('.content-part').css('padding-left', '0');
-                }, 100);
+            $(".name-filter").trigger("change");
+            $('.sdie-c').fadeIn(1);
+            $('.col-sm-3 + .slimScrollDiv').css('width', '85%');
+            $('.content-part').css('padding-left', '0');
             $('body').find('div.left-fixed-menu + div.content-part').css('width','calc(100% - 280px');
             return false
         });

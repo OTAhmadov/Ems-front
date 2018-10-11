@@ -1135,24 +1135,16 @@
     top: -34px;
     position: relative;
 }
-.app-list{
-    float: right;
-    /* display: inline-block; */
-    position: relative;
-    right: 90px;
-    top: -55px;
-    height: 100%;
-}
+
 .app-con{
     list-style: none;
     margin: 0;
     padding: 0;
 }
-.app-con li{
+/*.app-con li{
     float: left;
-    margin-right: 20px;
-    /*padding: 0 15px;*/
-}
+    !*padding: 0 15px;*!
+}*/
 .app-con li a{
     font-size: 13px;
     line-height: 65px;
@@ -1183,15 +1175,6 @@
     top: 16px;
     position: relative;
 }
-.app-list {
-    float: right;
-    /* display: inline-block; */
-    position: relative;
-    right: 90px;
-    top: -47px;
-    height: 100%;
-}
-
 #nprogress .bar{
     z-index: 2000000 !important;
 }
