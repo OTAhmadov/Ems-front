@@ -5,7 +5,11 @@
  */
 
 var Ems = {
+<<<<<<< .mine
      // token: 'cef0921a6f6f46aebf66592f516b1154fce8dd5fe6eb4062a12db5ddece6a15c',
+=======
+     token: 'aa6f455d9f22401fab023a654b514a90fc53fd84d2f846dc8060e9ceaf031235',
+>>>>>>> .theirs
     lang: 'az',
     appId: 1000008,
     currModule: '',
