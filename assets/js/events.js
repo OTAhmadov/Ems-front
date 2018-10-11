@@ -5,9 +5,9 @@
  */
 
 $(function () {
-
-    $(".iframeUpdate").attr("src","http://192.168.1.78:8082/UnibookShared/#/profile-edit?token=" + Ems.token);
-
+//
+//    $(".iframeUpdate").attr("src","http://192.168.1.78:8082/UnibookShared/#/profile-edit?token=" + Ems.token);
+//
 
     var chosenLang;
 
@@ -3284,6 +3284,5 @@ setTimeout(function () {
     $(".main-img").on("click", function () {
         $('.user-info').toggleClass("helloWorld");
     });
-        
-    
 });
+
