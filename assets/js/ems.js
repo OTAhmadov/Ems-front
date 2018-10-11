@@ -5,7 +5,7 @@
  */
 
 var Ems = {
-     token: 'fe6d719ec3934f8e9ffabb7012e9ab50345ef495f0454536a492e08d637bf7e9',
+     // token: 'cef0921a6f6f46aebf66592f516b1154fce8dd5fe6eb4062a12db5ddece6a15c',
     lang: 'az',
     appId: 1000008,
     currModule: '',
@@ -34,22 +34,18 @@ var Ems = {
    // HSIS: "http://localhost:8080/UnibookHsisRest/",
         HSIS: "http://192.168.1.8:8082/UnibookHsisRest/",
        // REPORT: 'http://localhost:8080/ReportingRest/',
-<<<<<<< .mine
         REPORT: 'http://192.168.1.8:8082/ReportingRest/',
         // EMS: 'http://localhost:8080/UnibookEMS/',
         EMS: 'http://192.168.1.8:8082/UnibookEMS/',
         COMMUNICATION: 'http://192.168.1.8:8082/CommunicationRest/',
         NOTIFICATION: 'http://192.168.1.8:8082/NotificationSystem/greeting.html?token=',
-        SOCKET: 'http://localhost:8080/SocketRest'
-=======
+        // SOCKET: 'http://localhost:8080/SocketRest',
         REPORT: 'http://192.168.1.8:8082/ReportingRest/',
-         EMS: 'http://localhost:8080/UnibookEMS/',
-//        EMS: 'http://192.168.1.8:8082/UnibookEMS/',
+         // EMS: 'http://localhost:8080/UnibookEMS/',
+       EMS: 'http://192.168.1.8:8082/UnibookEMS/',
         COMMUNICATION: 'http://192.168.1.8:8082/CommunicationRest/',
         NOTIFICATION: 'http://192.168.1.8:8082/NotificationSystem/greeting.html?token=',
 //        SOCKET: 'http://localhost:8080/SocketRest'
->>>>>>> .theirs
-
     },
     statusCodes: {
         OK: 'OK',
